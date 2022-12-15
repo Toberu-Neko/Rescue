@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player Avatar Mask
+  m_Mask: 00000000000000000000000000000000000000000100000000000000010000000000000000000000000000000100000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Dont_Touch
+    m_Weight: 1
+  - m_Path: Dont_Touch/Geometry
+    m_Weight: 1
+  - m_Path: Dont_Touch/Geometry/cat
+    m_Weight: 1
+  - m_Path: Dont_Touch/Geometry/L_eye
+    m_Weight: 1
+  - m_Path: Dont_Touch/Geometry/R_eye
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/LHip
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/LHip/LEllbow
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/LHip/LEllbow/LKnee
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/LHip/LEllbow/LKnee/LAnkle
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/LHip/LEllbow/LKnee/LAnkle/Lpaw
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/LHip/LEllbow/LKnee/LAnkle/Lpaw/LFinger
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/RHip
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/RHip/REllbow
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/RHip/REllbow/RKnee
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/RHip/REllbow/RKnee/RAnkle
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/RHip/REllbow/RKnee/RAnkle/Rpaw
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/RHip/REllbow/RKnee/RAnkle/Rpaw/RFinger
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Belly
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/FLShoulder
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/FLShoulder/FLKnee
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/FLShoulder/FLKnee/FLAnkle
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/FLShoulder/FLKnee/FLAnkle/FLFinger
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/FRShoulder
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/FRShoulder/FRKnee
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/FRShoulder/FRKnee/FRAnkle
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/FRShoulder/FRKnee/FRAnkle/FRFinger
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck/Head
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck/Head/Jaw
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck/Head/LEar1
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck/Head/LEar1/LEar2
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck/Head/LEye
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck/Head/LEye/LEyeFollow
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck/Head/LWisker
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck/Head/Nose
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck/Head/REar1
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck/Head/REar1/REar2
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck/Head/REye
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck/Head/REye/REyeFllow
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Spine1/Spine2/Spine3/Neck/Head/RWisker
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Tail1
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Tail1/Tail2
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Tail1/Tail2/Tail3
+    m_Weight: 1
+  - m_Path: Dont_Touch/Rig_Systems/Hip/Tail1/Tail2/Tail3/Tail4
+    m_Weight: 1

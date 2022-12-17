@@ -25,9 +25,4 @@ public class SavePoint : MonoBehaviour
         playerStates = PlayerManager.instance.player.GetComponent<PlayerStates>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

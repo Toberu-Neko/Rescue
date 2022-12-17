@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MainMenuDialogueManager : MonoBehaviour
 {
-    [SerializeField]private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private GameObject confirmSkipUI;
 
     private Queue<string> sentences;
@@ -17,22 +17,13 @@ public class MainMenuDialogueManager : MonoBehaviour
     void Start()
     {
         skipDialogueTimer = 0;
-        //dialogueText = UIManager.instance.UI.transform.Find("Dialogue/DialougeUI(BG)/Dialouge").gameObject.GetComponent<TextMeshProUGUI>();
-        //dialougeUI = UIManager.instance.UI.transform.Find("Dialogue/DialougeUI(BG)").gameObject;
-        //animator = UIManager.instance.UI.transform.Find("Dialogue/DialougeUI(BG)").gameObject.GetComponent<Animator>();
-        //ended = false;
-        //dialogueEnded = false;
-        //dialougeUI.SetActive(true);
         dialogueEnded = true;
         confirmSkipUI.SetActive(false);
         sentences = new Queue<string>();
-        //npcNameArray = new Queue<string>();
-
-        //dialougeUI.SetActive(false);
     }
     private void Update()
     {
-        if (!dialogueEnded && skipDialogueTimer <= 0.25f)
+        if (!dialogueEnded && skipDialogueTimer <= 0.05f)
         { 
             skipDialogueTimer += Time.deltaTime;
         }
@@ -44,7 +35,7 @@ public class MainMenuDialogueManager : MonoBehaviour
         {
             skipAnimation = true;
         }
-        else if (Cursor.lockState == CursorLockMode.None && Input.GetKeyDown(KeyCode.Space) && !dialogueEnded && skipDialogueTimer >= 0.25f)
+        else if (Cursor.lockState == CursorLockMode.None && Input.GetKeyDown(KeyCode.Space) && !dialogueEnded && skipDialogueTimer >= 0.05f)
         {
             confirmSkipUI.SetActive(true);
         }
@@ -52,19 +43,16 @@ public class MainMenuDialogueManager : MonoBehaviour
     public void StartDialogue(DialogueScriptableObj dialogue)
     {
         skipDialogueTimer = 0;
-        //dialogueKeeper = dialogue;
-        //Debug.Log("InDialogue");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         sentenceFinished = true;
         skipAnimation = false;
         dialogueEnded = false;
 
-        //animator.SetBool("isOpen", true);
-        //nameText.text = dialogue.npcName;
+        Time.timeScale = 0f;
+
 
         sentences.Clear();
-        //npcNameArray.Clear();
 
         foreach (Line line in dialogue.lines)
         {
@@ -87,7 +75,6 @@ public class MainMenuDialogueManager : MonoBehaviour
         StopAllCoroutines();
         
         StartCoroutine(TypeSentence(sentence));
-        //dialogueText.text = sentence;
     }
 
     IEnumerator TypeSentence(string sentence)
@@ -114,12 +101,7 @@ public class MainMenuDialogueManager : MonoBehaviour
     {
         StopAllCoroutines();
         sentences.Clear();
-        //dialougeUI.SetActive(false);
-        //animator.SetBool("isOpen", false);
         dialogueEnded = true;
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
-        //ended = true;
         Time.timeScale = 1f;
     }
 }

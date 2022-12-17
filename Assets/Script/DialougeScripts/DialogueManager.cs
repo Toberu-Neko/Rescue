@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences, npcNameArray;
     public bool dialoguePlaying;
     //public bool dialogueEnded;
-    public bool ended;
+    public bool dialogueEnded;
     bool sentenceFinished;
     bool skipAnimation;
     bool skipAble;
@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour
         goalText = UIManager.instance.UI.transform.Find("HUD/GoalHUD/現在目標內容Text").gameObject.GetComponent<TextMeshProUGUI>();
         goalParent = UIManager.instance.UI.transform.Find("HUD/GoalHUD/").gameObject;
 
-        ended = true;
+        dialogueEnded = true;
         dialoguePlaying = false;
         dialougeUI.SetActive(true);
         confirmSkipUI.SetActive(false);
@@ -53,7 +53,7 @@ public class DialogueManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Cursor.lockState == CursorLockMode.None && Input.GetKeyDown(KeyCode.Mouse0) && sentenceFinished && !ended && !confirmSkipUI.activeInHierarchy)
+        if (Cursor.lockState == CursorLockMode.None && Input.GetKeyDown(KeyCode.Mouse0) && sentenceFinished && !dialogueEnded && !confirmSkipUI.activeInHierarchy)
         {
             DisplayNextSentence();
         }
@@ -61,7 +61,7 @@ public class DialogueManager : MonoBehaviour
         {
             skipAnimation = true;
         }
-        else if (Cursor.lockState == CursorLockMode.None && Input.GetKeyDown(KeyCode.Space) && !ended && skipAble)
+        else if (Cursor.lockState == CursorLockMode.None && Input.GetKeyDown(KeyCode.Space) && !dialogueEnded && skipAble)
         {
             confirmSkipUI.SetActive(true);
         }
@@ -83,7 +83,7 @@ public class DialogueManager : MonoBehaviour
         //dialogueKeeper = dialogue;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        ended = false;
+        dialogueEnded = false;
 
         dialoguePlaying = true;
         sentenceFinished = true;
@@ -148,7 +148,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        ended = true;
+        dialogueEnded = true;
         Time.timeScale = 1f;
     }
     public void ChangeGoal(string goal)

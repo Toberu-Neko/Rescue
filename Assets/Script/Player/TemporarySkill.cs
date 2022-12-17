@@ -52,7 +52,7 @@ public class TemporarySkill : MonoBehaviour
             skillSelected = true;
             playerCombat.SelectSkill(-1);
             inWaterRangeTimer = 0;
-            Debug.Log("Changed to -1");
+            //Debug.Log("Changed to -1");
         }
         //Debug.Log(inWaterRangeTimer / waterTSkill.skill.cooldown);
     }

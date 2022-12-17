@@ -47,6 +47,7 @@ public class PlayerSaveScript : MonoBehaviour
         playerData.playTime = data.playTime;
         playerData.currentHealth = data.currentHealth;
         playerData.maxHealth = data.maxHealth;
+        playerData.gameEnded = data.gameEnded;
 
         playerData.skillSlot = data.skillSlot;
         playerData.swim = data.swim;

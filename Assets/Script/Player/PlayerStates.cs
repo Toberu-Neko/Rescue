@@ -9,6 +9,7 @@ public class PlayerStates : MonoBehaviour
     private PlayerData playerData;
     public int maxHealth;
     public int currentHealth;
+    public bool gameEnded;
 
     //quest
     public Quest quest;
@@ -50,6 +51,7 @@ public class PlayerStates : MonoBehaviour
         playerData = PlayerManager.instance.playerData;
         talkingTo = QuestGoal.TalkToTarget.None;
         goalText = UIManager.instance.UI.transform.Find("HUD/GoalHUD/現在目標內容Text").gameObject.GetComponent<TextMeshProUGUI>();
+        gameEnded = playerData.gameEnded;
 
         currentScene = playerData.currentScene;
         playTime = playerData.playTime;
@@ -106,7 +108,6 @@ public class PlayerStates : MonoBehaviour
 
         if (regenAble && takeDamageTimer >= 10f && regenComplete && currentHealth < maxHealth) 
         {
-            
             regenComplete = false;
             StartCoroutine(RegenDelay());
         }

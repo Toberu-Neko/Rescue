@@ -28,14 +28,11 @@ public class MainMenu : MonoBehaviour
     {
         if(mainMenuDialogueManager.dialogueEnded && dialogueCount < mainMenuDialogue.Length && !started)
         {
-
             dialogueTextGameobj.SetActive(false);
             mainMenuDialogueManager.dialogueEnded = false;
             Debug.Log(dialogueCount);
             StopAllCoroutines();
             StartCoroutine(CanvasGroupAlpha(dialogueCount));
-            //Debug.Log(dialogueCount + "," + mainMenuDialogue.Length);
-
         }
         if(dialogueCount == mainMenuDialogue.Length  && !started && mainMenuDialogueManager.dialogueEnded && SceneManager.GetActiveScene().buildIndex == 0)
         {
@@ -59,6 +56,7 @@ public class MainMenu : MonoBehaviour
     public void StratGameButton()
     {
         dialogue.SetActive(true);
+        StopAllCoroutines();
         StartCoroutine(CanvasGroupAlpha(0));
     }
     IEnumerator BlackImageAlpha()
@@ -82,7 +80,6 @@ public class MainMenu : MonoBehaviour
         dialogueTextGameobj.SetActive(true);
         dialogueCount++;
         mainMenuDialogueManager.StartDialogue(mainMenuDialogue[i]);
-        yield return null;
     }
     public void TestGameLoadScene()
     {

@@ -8,6 +8,7 @@ public class PlayerDataTransfer
 {
     public int currentScene;
     public float playTime;
+    public bool gameEnded;
 
     public int maxHealth;
     public int currentHealth;
@@ -28,6 +29,7 @@ public class PlayerDataTransfer
     {
         currentScene = playerStates.currentScene;
         playTime = playerStates.playTime;
+        gameEnded = playerStates.gameEnded;
 
         maxHealth = playerStates.maxHealth;
         currentHealth = playerStates.currentHealth;

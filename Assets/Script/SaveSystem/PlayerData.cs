@@ -7,6 +7,7 @@ public class PlayerData : MonoBehaviour
 {
     public int currentScene;
     public float playTime;
+    public bool gameEnded;
 
     public int maxHealth;
     public int currentHealth;

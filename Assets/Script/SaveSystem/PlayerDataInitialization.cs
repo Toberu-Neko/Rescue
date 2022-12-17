@@ -11,6 +11,8 @@ public class PlayerDataInitialization : MonoBehaviour
     {
         playerData.currentScene = 1;
         playerData.playTime = 0;
+        playerData.gameEnded = false;
+
         playerData.maxHealth = 100;
         playerData.currentHealth = 50;
         playerData.position = L1Position;

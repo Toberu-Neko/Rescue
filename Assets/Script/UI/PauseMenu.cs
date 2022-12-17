@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused;
+    public bool canPause;
+
     private PlayerStates playerStates;
 
     [SerializeField] private GameObject allPauseMenuUI;
@@ -23,6 +25,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
+        canPause = true;
         levelLoader = UIManager.instance.UI.GetComponent<LevelLoader>();
         dialogueManager = UIManager.instance.dialogueManager;
         Time.timeScale = 1f;
@@ -32,7 +35,7 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex != 0 && !dialogueManager.dialoguePlaying)
+        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex != 0 && !dialogueManager.dialoguePlaying && canPause)
         {
             if (GameIsPaused && !settingsMenuUI.activeInHierarchy)
             {
@@ -54,7 +57,7 @@ public class PauseMenu : MonoBehaviour
 
         if (pauseMenuUI.activeInHierarchy)
         {
-            if (playerStates.saveAble || SceneManager.GetActiveScene().buildIndex == 3)
+            if (playerStates.saveAble || SceneManager.GetActiveScene().buildIndex == 3 || playerStates.gameEnded)
             {
                 saveButton.interactable = true;
             }

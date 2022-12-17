@@ -15,10 +15,11 @@ public struct Line
 public class DialogueScriptableObj : ScriptableObject
 {
     [Header("對話基本資料")]
-    [Tooltip("1XXX為僅限一次對話、2XXX為重複對話。目前無用途。")]
-    public int index;
+    //[Tooltip("1XXX為僅限一次對話、2XXX為重複對話。目前無用途。")]
+    //public int index;
     public string dialogueName;
     public QuestGoal.TalkToTarget NpcName;
+    public bool isTutorial;
     public bool completed;
 
     [Header("任務資料（暫時請勿使用）")]

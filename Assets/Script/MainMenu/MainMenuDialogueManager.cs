@@ -121,7 +121,5 @@ public class MainMenuDialogueManager : MonoBehaviour
         //Cursor.visible = false;
         //ended = true;
         Time.timeScale = 1f;
-
-        //Debug.Log("End of conversation");
     }
 }

@@ -6,6 +6,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     private GameObject confirmSkipUI;
+    private GameObject pressSpaceNote;
     private TextMeshProUGUI nameText;
     private TextMeshProUGUI dialogueText;
     private GameObject dialougeUI;
@@ -22,12 +23,14 @@ public class DialogueManager : MonoBehaviour
     public bool ended;
     bool sentenceFinished;
     bool skipAnimation;
+    bool skipAble;
     void Start()
     {
         confirmSkipUI = UIManager.instance.UI.transform.Find("Dialogue/ConfirmSkip").gameObject;
         playerStates = PlayerManager.instance.player.GetComponent<PlayerStates>();
         nameText = UIManager.instance.UI.transform.Find("Dialogue/DialougeUI(BG)/NPC Name").gameObject.GetComponent<TextMeshProUGUI>();
         dialogueText = UIManager.instance.UI.transform.Find("Dialogue/DialougeUI(BG)/Dialouge").gameObject.GetComponent<TextMeshProUGUI>();
+        pressSpaceNote = UIManager.instance.UI.transform.Find("Dialogue/DialougeUI(BG)/「Space」來跳過劇情。").gameObject;
         dialougeUI = UIManager.instance.UI.transform.Find("Dialogue/DialougeUI(BG)").gameObject;
         animator = UIManager.instance.UI.transform.Find("Dialogue/DialougeUI(BG)").gameObject.GetComponent<Animator>();
         goalText = UIManager.instance.UI.transform.Find("HUD/GoalHUD/現在目標內容Text").gameObject.GetComponent<TextMeshProUGUI>();
@@ -58,13 +61,23 @@ public class DialogueManager : MonoBehaviour
         {
             skipAnimation = true;
         }
-        else if (Cursor.lockState == CursorLockMode.None && Input.GetKeyDown(KeyCode.Space) && !ended)
+        else if (Cursor.lockState == CursorLockMode.None && Input.GetKeyDown(KeyCode.Space) && !ended && skipAble)
         {
             confirmSkipUI.SetActive(true);
         }
     }
     public void StartDialogue(DialogueScriptableObj dialogue)
     {
+        if (dialogue.isTutorial)
+        {
+            skipAble = false;
+            pressSpaceNote.SetActive(false);
+        }
+        else if (!dialogue.isTutorial)
+        {
+            skipAble = true;
+            pressSpaceNote.SetActive(true);
+        }
         Time.timeScale = 0f;
         goalParent.SetActive(false);
         //dialogueKeeper = dialogue;
@@ -137,8 +150,6 @@ public class DialogueManager : MonoBehaviour
         Cursor.visible = false;
         ended = true;
         Time.timeScale = 1f;
-
-        //Debug.Log("End of conversation");
     }
     public void ChangeGoal(string goal)
     {

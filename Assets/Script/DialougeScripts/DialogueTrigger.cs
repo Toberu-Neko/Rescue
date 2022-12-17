@@ -47,7 +47,7 @@ public class DialogueTrigger : MonoBehaviour
         notePressE.SetActive(false);
         if(repeatDialogue.Length == 0)
         {
-            Debug.LogError(name + " 的不斷重複對話未附加，會導致對話判定對象錯誤。");
+            //Debug.LogError(name + " 的不斷重複對話未附加，會導致對話判定對象錯誤。");
         }
 
 
@@ -57,7 +57,6 @@ public class DialogueTrigger : MonoBehaviour
         if(Input.GetKeyDown(interactionKey) && playerInRange && Cursor.lockState == CursorLockMode.Locked && !enemyInRange.enemyInRange)
         {
             TriggerDialouge();
-            notePressE.SetActive(false);
         }
         if (enemyInRange.enemyInRange && playerInRange && notePressEText.text != "清除小怪")
         {
@@ -88,7 +87,8 @@ public class DialogueTrigger : MonoBehaviour
     #endregion
     public void TriggerDialouge()
     {
-        playerStates.talkingTo = repeatDialogue[0].NpcName;
+        notePressE.SetActive(false);
+        //playerStates.talkingTo = repeatDialogue[0].NpcName;
 
         /*if (playerStates.quest != null && playerStates.quest.goal.goalType == QuestGoal.GoalType.Talk && playerStates.talkingTo == playerStates.quest.goal.talkTo)
         {
@@ -116,7 +116,7 @@ public class DialogueTrigger : MonoBehaviour
             playerStates.quest = giveQuestDia.quest;
             qusetControler.QusetAccepted(giveQuestDia.quest);
         }*/
-        if(dialogueCounter < normalDialogue.Length)
+        if (dialogueCounter < normalDialogue.Length)
         {
             if (normalDialogue[dialogueCounter].completed)
             {

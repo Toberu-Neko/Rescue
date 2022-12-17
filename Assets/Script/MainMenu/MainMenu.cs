@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
@@ -36,7 +37,7 @@ public class MainMenu : MonoBehaviour
             //Debug.Log(dialogueCount + "," + mainMenuDialogue.Length);
 
         }
-        if(dialogueCount == mainMenuDialogue.Length  && !started && mainMenuDialogueManager.dialogueEnded)
+        if(dialogueCount == mainMenuDialogue.Length  && !started && mainMenuDialogueManager.dialogueEnded && SceneManager.GetActiveScene().buildIndex == 0)
         {
             if(lastBlackImage.alpha == 0)
             {
@@ -62,8 +63,11 @@ public class MainMenu : MonoBehaviour
     }
     IEnumerator BlackImageAlpha()
     {
-        lastBlackImage.alpha += .1f;
-        yield return new WaitForSeconds(0.05f);
+        while(lastBlackImage.alpha < 1)
+        {
+            lastBlackImage.alpha += .1f;
+            yield return new WaitForSeconds(0.05f);
+        }
         blackImagAlphaChanging = false;
     }
     IEnumerator CanvasGroupAlpha(int i)

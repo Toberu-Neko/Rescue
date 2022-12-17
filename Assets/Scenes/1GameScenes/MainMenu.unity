@@ -1007,7 +1007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &184397658
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6681,8 +6681,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 610.01, y: -501.37}
-  m_SizeDelta: {x: -1220.0244, y: -1002.7368}
+  m_AnchoredPosition: {x: 724.4204, y: -501.37}
+  m_SizeDelta: {x: -1448.833, y: -1002.7368}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032691625
 MonoBehaviour:
@@ -6704,7 +6704,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u300CSpace\u300D\u4F86\u8DF3\u904E\u4E00\u6BB5\u5287\u60C5\u3002"
+  m_text: "\u300CSpace\u300D\u8DF3\u904E\u5287\u60C5"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3afc631cc2b6ad2468ab381ac2a40279, type: 2}
   m_sharedMaterial: {fileID: -4711360898182424392, guid: 3afc631cc2b6ad2468ab381ac2a40279, type: 2}
@@ -6713,7 +6713,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4278866820
   m_fontColor: {r: 0.5176471, g: 0.3254902, b: 0.039215688, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

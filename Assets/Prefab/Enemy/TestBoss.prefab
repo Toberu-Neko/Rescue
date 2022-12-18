@@ -83,6 +83,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 400
   invincible: 0
+  normalMaterial: {fileID: 2100000, guid: bef4fb07f311e8a41902293df8493cf3, type: 2}
+  attackedMaterial: {fileID: 2100000, guid: 48c60db01529e8246b5f17bebb635968, type: 2}
 --- !u!54 &6059077900820723465
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -385,6 +387,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: aaa1ef6f27881284ca3a6a426878a227, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bef4fb07f311e8a41902293df8493cf3, type: 2}
     - target: {fileID: 919132149155446097, guid: aaa1ef6f27881284ca3a6a426878a227, type: 3}
       propertyPath: m_Name
       value: BlueBoss

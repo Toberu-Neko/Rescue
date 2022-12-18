@@ -10,9 +10,15 @@ public class TestBossStates : MonoBehaviour
     private HealthBar bossHealthBar;
     private GameObject bossHealthBarObj;
     private TestBossController bossController;
+    [HideInInspector] public bool invincible;
 
-    public bool invincible;
+    
+    [Header("Change material")]
+    private Renderer bossRenderer;
+    [SerializeField] private Material normalMaterial;
+    [SerializeField] private Material attackedMaterial;
 
+    bool damaged;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +30,8 @@ public class TestBossStates : MonoBehaviour
         bossHealthBar.SetHealth(currentHealth);
         bossHealthBarObj.SetActive(false);
 
+        bossRenderer = transform.Find("Design/BlueBoss").gameObject.GetComponent<Renderer>();
+        damaged = false;
         invincible = false;
     }
     public void BossTakeDamage(int damage)
@@ -31,6 +39,9 @@ public class TestBossStates : MonoBehaviour
         if (invincible)
             return;
 
+        bossRenderer.sharedMaterial = attackedMaterial;
+        CancelInvoke(nameof(ChangeNormalMaterial));
+        Invoke(nameof(ChangeNormalMaterial), 1f);
         currentHealth -= damage;
         bossHealthBar.SetHealth(currentHealth);
     
@@ -44,6 +55,10 @@ public class TestBossStates : MonoBehaviour
         bossController.damageCount += damage;
     }
 
+    public void ChangeNormalMaterial()
+    {
+        bossRenderer.sharedMaterial = normalMaterial;
+    }
     void Died()
     {
         //Die animation
@@ -52,7 +67,7 @@ public class TestBossStates : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         GetComponent<TestBossController>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = false;
-        healthBarDeactive();
+        HealthBarDeactive();
         //GetComponent<NavMeshAgent>().enabled = false;
         StartCoroutine(DieDelay());
 
@@ -65,11 +80,12 @@ public class TestBossStates : MonoBehaviour
     }
 
 
-    public void healthBarActive()
+    public void HealthBarActive()
     {
         bossHealthBarObj.SetActive(true);
+        bossHealthBar.SetHealth(currentHealth);
     }
-    public void healthBarDeactive()
+    public void HealthBarDeactive()
     {
         bossHealthBarObj.SetActive(false);
     }

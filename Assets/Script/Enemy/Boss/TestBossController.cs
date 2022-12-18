@@ -71,7 +71,7 @@ public class TestBossController : MonoBehaviour
 
         if (playerInAttackRange)
         {
-            testBossStates.healthBarActive();
+            testBossStates.HealthBarActive();
 
             if (attackAble)
             {
@@ -81,7 +81,7 @@ public class TestBossController : MonoBehaviour
         }
         else if (!playerInAttackRange)
         {
-            testBossStates.healthBarDeactive();
+            testBossStates.HealthBarDeactive();
         }
         
 
@@ -91,13 +91,14 @@ public class TestBossController : MonoBehaviour
     IEnumerator MaxHealthMinuse25()
     {
         testBossStates.invincible = true;
+        testBossStates.ChangeNormalMaterial();
         Vector3 _originScale = knockBackSphare.transform.localScale;
         knockBackSphare.SetActive(true);
         while (knockBackSphare.transform.localScale.y < knockbackMaxSacle-0.8f)
         {
             knockBackSphare.transform.localScale = Vector3.Lerp(knockBackSphare.transform.localScale, new Vector3(knockbackMaxSacle, knockbackMaxSacle, knockbackMaxSacle), Time.deltaTime * 8f); ;
             //Debug.Log(knockBackSphare.transform.localScale.y);
-            yield return new WaitForSeconds(.3f) ;
+            yield return new WaitForSeconds(.07f) ;
         }
         knockBackSphareCollider.enabled = true;
         /*if(Physics.CheckSphere(knockBackSphare.transform.position, knockbackMaxSacle - 0.8f, playerLayer))
@@ -107,7 +108,7 @@ public class TestBossController : MonoBehaviour
             playerRig.AddForce(((playerRig.transform.position + Vector3.down * .5f) - knockBackSphare.transform.position).normalized * 80f, ForceMode.Impulse);
             Invoke(nameof(speedControlAbleTrue), 1f);
         }*/
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.03f);
         knockBackSphareCollider.enabled = false;
         knockBackSphare.transform.localScale = _originScale;
         knockBackSphare.SetActive(false);

@@ -20,7 +20,7 @@ public class BossKnockback : MonoBehaviour
         {
             forceMotion.speedControlAble = false;
             playerRig.AddForce(((playerRig.transform.position + Vector3.down * .5f) - transform.position).normalized * 80f, ForceMode.Impulse);
-            Invoke(nameof(speedControlAbleTrue), 1f);
+            Invoke(nameof(SpeedControlAbleTrue), 0.8f);
         }
         if (other.gameObject.CompareTag("WaterCeiling"))
         {
@@ -28,7 +28,7 @@ public class BossKnockback : MonoBehaviour
             wallStatus.CollisionDeactivate();
         }
     }
-    void speedControlAbleTrue()
+    void SpeedControlAbleTrue()
     {
         forceMotion.speedControlAble = true;
     }

@@ -47,6 +47,16 @@ public class SkillState : MonoBehaviour
                     wallStatus.TakeDamage(skill.damage);
                     Destroy(gameObject);
                 }
+                else if (collision.gameObject.layer == LayerMask.NameToLayer("Skill") || collision.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+                    return;
+
+                hitTarget = true;
+                rig.isKinematic = true;
+                design.SetActive(false);
+
+
+                col.enabled = false;
+                transform.SetParent(collision.transform);
             }
         }
         else

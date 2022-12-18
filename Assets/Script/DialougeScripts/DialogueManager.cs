@@ -127,11 +127,13 @@ public class DialogueManager : MonoBehaviour
             if (skipAnimation)
             {
                 dialogueText.text += letter;
+                AudioManager.instance.Play("Typing");
                 yield return new WaitForSecondsRealtime(0.001f);
             }
             else
             {
                 dialogueText.text += letter;
+                AudioManager.instance.Play("Typing");
                 yield return new WaitForSecondsRealtime(0.1f);
             }
         }

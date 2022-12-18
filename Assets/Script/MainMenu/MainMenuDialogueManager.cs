@@ -8,6 +8,7 @@ public class MainMenuDialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private GameObject confirmSkipUI;
 
+
     private Queue<string> sentences;
     public bool dialogueEnded;
     bool sentenceFinished;
@@ -86,11 +87,13 @@ public class MainMenuDialogueManager : MonoBehaviour
             if (skipAnimation)
             {
                 dialogueText.text += letter;
+                AudioManager.instance.Play("Typing");
                 yield return new WaitForSecondsRealtime(0.005f);
             }
             else
             {
                 dialogueText.text += letter;
+                AudioManager.instance.Play("Typing");
                 yield return new WaitForSecondsRealtime(0.1f);
             }
         }

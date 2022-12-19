@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
     }
     private void Update()
     {
-        if(mainMenuDialogueManager.dialogueEnded && dialogueCount < mainMenuDialogue.Length && !started)
+        if(mainMenuDialogueManager.dialogueEnded && dialogueCount < mainMenuDialogue.Length)
         {
             dialogueTextGameobj.SetActive(false);
             mainMenuDialogueManager.dialogueEnded = false;
@@ -34,7 +34,7 @@ public class MainMenu : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(CanvasGroupAlpha(dialogueCount));
         }
-        if(dialogueCount == mainMenuDialogue.Length  && !started && mainMenuDialogueManager.dialogueEnded && SceneManager.GetActiveScene().buildIndex == 0)
+        if(dialogueCount == mainMenuDialogue.Length  && mainMenuDialogueManager.dialogueEnded && SceneManager.GetActiveScene().buildIndex == 0)
         {
             if(lastBlackImage.alpha == 0)
             {
@@ -70,6 +70,7 @@ public class MainMenu : MonoBehaviour
     }
     IEnumerator CanvasGroupAlpha(int i)
     {
+        Debug.Log("Dia start");
         while (diaCanvasGroup[i].alpha < 1)
         {
             diaCanvasGroup[i].alpha += 0.1f;

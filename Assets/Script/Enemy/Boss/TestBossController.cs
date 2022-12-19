@@ -15,6 +15,7 @@ public class TestBossController : MonoBehaviour
     public GameObject attackSphare;
 
     [SerializeField] private GameObject knockBackSphare;
+    private BossKnockback bossKnockback;
     [SerializeField] private float knockbackMaxSacle;
     private Collider knockBackSphareCollider;
     private GameObject bossHealthBar;
@@ -38,8 +39,8 @@ public class TestBossController : MonoBehaviour
         playerRig = PlayerManager.instance.player.GetComponent<Rigidbody>();
         forceMotion = PlayerManager.instance.player.GetComponent<ForceMotionNew>();
         testBossStates = gameObject.GetComponent<TestBossStates>();
-        knockBackSphareCollider = knockBackSphare.GetComponent<Collider>();
-        knockBackSphareCollider.enabled = false;
+        bossKnockback = knockBackSphare.GetComponent<BossKnockback>();
+
         bossHealthBar = UIManager.instance.UI.transform.Find("HUD/BossHealthBar").gameObject;
         knockBackSphare.SetActive(false);
         playerInAttackRange = false;
@@ -100,7 +101,7 @@ public class TestBossController : MonoBehaviour
             //Debug.Log(knockBackSphare.transform.localScale.y);
             yield return new WaitForSeconds(.07f) ;
         }
-        knockBackSphareCollider.enabled = true;
+        bossKnockback.dealDamage = true;
         /*if(Physics.CheckSphere(knockBackSphare.transform.position, knockbackMaxSacle - 0.8f, playerLayer))
         {
             Debug.Log("In  range");
@@ -109,7 +110,7 @@ public class TestBossController : MonoBehaviour
             Invoke(nameof(speedControlAbleTrue), 1f);
         }*/
         yield return new WaitForSeconds(.03f);
-        knockBackSphareCollider.enabled = false;
+        //knockBackSphareCollider.enabled = false;
         knockBackSphare.transform.localScale = _originScale;
         knockBackSphare.SetActive(false);
         attackAble = true;

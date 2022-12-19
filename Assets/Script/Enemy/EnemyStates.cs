@@ -10,11 +10,21 @@ public class EnemyStates : MonoBehaviour
     private int currentHealth;
     public HealthBar enemyHealthBar;
     public GameObject enemyHealthBarObj;
+    private Renderer renderer;
+
+    [SerializeField] private Material waterNormal;
+    [SerializeField] private Material waterAttacked;
+    [SerializeField] private Material grassNormal;
+    [SerializeField] private Material grassAttacked;
+
     float combatTimer = 0;
     bool inCombat;
+    [HideInInspector] public bool damaged;
     void Start()
     {
+        renderer = transform.Find("¼Ò«¬/EM").gameObject.GetComponent<Renderer>();
         died = false;
+        damaged = false;
         inCombat = false;
         currentHealth = maxHealth;
         enemyHealthBar.SetMaxHealth(maxHealth);
@@ -40,6 +50,12 @@ public class EnemyStates : MonoBehaviour
     {
         inCombat = true;
         combatTimer = 0;
+        if (GetComponent<EnemyController>() != null)
+            renderer.sharedMaterial = grassAttacked;
+        else if (GetComponent<WaterEnemyController>() != null)
+            renderer.sharedMaterial = waterAttacked;
+        CancelInvoke(nameof(DamagedFalse));
+        Invoke(nameof(DamagedFalse), 1f);
         currentHealth -= damage;
         enemyHealthBar.SetHealth(currentHealth);
         //Play hurt animation
@@ -49,6 +65,13 @@ public class EnemyStates : MonoBehaviour
             currentHealth = 0;
             Died();
         }
+    }
+    public void DamagedFalse()
+    {
+        if (GetComponent<EnemyController>() != null)
+            renderer.sharedMaterial = grassNormal;
+        else if (GetComponent<WaterEnemyController>() != null)
+            renderer.sharedMaterial = waterNormal;
     }
     void Died()
     {

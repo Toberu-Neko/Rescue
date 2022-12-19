@@ -272,6 +272,11 @@ MonoBehaviour:
   maxHealth: 100
   enemyHealthBar: {fileID: 4105934913031931947}
   enemyHealthBarObj: {fileID: 4105934913031931945}
+  waterNormal: {fileID: 2100000, guid: aa410045604a305438e3061f99174184, type: 2}
+  waterAttacked: {fileID: 2100000, guid: 9b43a176cb79c214a873872b83a7e8c0, type: 2}
+  grassNormal: {fileID: 2100000, guid: 73a5505ea8d248e4a9fde6ffc4227ced, type: 2}
+  grassAttacked: {fileID: 2100000, guid: 59611fae1f8d9614d90d3ed8626878ef, type: 2}
+  damaged: 0
 --- !u!114 &4028435369852516528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,9 +796,13 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4d231a2b788478d47b383261a9e99d25, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 73a5505ea8d248e4a9fde6ffc4227ced, type: 2}
     - target: {fileID: 919132149155446097, guid: 4d231a2b788478d47b383261a9e99d25, type: 3}
       propertyPath: m_Name
-      value: GreenEM
+      value: EM
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d231a2b788478d47b383261a9e99d25, type: 3}

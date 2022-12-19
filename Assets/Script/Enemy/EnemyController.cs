@@ -45,7 +45,7 @@ public class EnemyController : MonoBehaviour
         walkAble = true;
         enemyStates = gameObject.GetComponent<EnemyStates>();
         hitParticle = ParticleManager.instance.hitParticle;
-        animator = gameObject.transform.Find("¼Ò«¬/GreenEM").gameObject.GetComponent<Animator>();
+        animator = gameObject.transform.Find("¼Ò«¬/EM").gameObject.GetComponent<Animator>();
         startPosition = transform.position;
         attackComplete = true;
         playerStates = PlayerManager.instance.player.GetComponent<PlayerStates>();

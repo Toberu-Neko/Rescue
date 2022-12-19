@@ -36,8 +36,9 @@ public class MainMenuDialogueManager : MonoBehaviour
         {
             skipAnimation = true;
         }
-        else if (Cursor.lockState == CursorLockMode.None && Input.GetKeyDown(KeyCode.Space) && !dialogueEnded && skipDialogueTimer >= 0.05f)
+        else if (Cursor.lockState == CursorLockMode.None && Input.GetKeyDown(KeyCode.Space) && !confirmSkipUI.activeInHierarchy && !dialogueEnded)
         {
+            skipDialogueTimer = 1f;
             confirmSkipUI.SetActive(true);
         }
     }

@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour
         {
             dialogueTextGameobj.SetActive(false);
             mainMenuDialogueManager.dialogueEnded = false;
-            Debug.Log(dialogueCount);
+            //Debug.Log(dialogueCount);
             StopAllCoroutines();
             StartCoroutine(CanvasGroupAlpha(dialogueCount));
         }
@@ -70,7 +70,7 @@ public class MainMenu : MonoBehaviour
     }
     IEnumerator CanvasGroupAlpha(int i)
     {
-        Debug.Log("Dia start");
+        //Debug.Log("Dia start");
         while (diaCanvasGroup[i].alpha < 1)
         {
             diaCanvasGroup[i].alpha += 0.1f;

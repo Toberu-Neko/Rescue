@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueButton : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DialogueButton : MonoBehaviour
     {
         button = GetComponent<Button>();
         dialogueManager = UIManager.instance.dialogueManager;
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         button.onClick.AddListener(SkipDialogue);
     }
     void SkipDialogue()

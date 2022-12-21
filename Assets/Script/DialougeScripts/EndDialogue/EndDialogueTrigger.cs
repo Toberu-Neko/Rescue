@@ -13,8 +13,8 @@ public class EndDialogueTrigger : MonoBehaviour
     [Tooltip("放置會不斷重複的對話")]
     public DialogueScriptableObj[] repeatDialogue;
 
-    public DialogueScriptableObj giveQuestDia;
-    public DialogueScriptableObj completeQuestDia;
+    [HideInInspector] public DialogueScriptableObj giveQuestDia;
+    [HideInInspector] public DialogueScriptableObj completeQuestDia;
 
     private EnemyInRange enemyInRange;
     private DialogueManager dialogueManager;

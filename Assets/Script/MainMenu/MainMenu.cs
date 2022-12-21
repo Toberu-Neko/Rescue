@@ -90,6 +90,7 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGameLoadScene()
     {
+        Time.timeScale = 1f;
         levelLoader.LoadLevel(1);
 
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

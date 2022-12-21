@@ -39,8 +39,7 @@ public class TestBossStates : MonoBehaviour
         if (invincible)
             return;
 
-        bossRenderer.sharedMaterial = attackedMaterial;
-        CancelInvoke(nameof(ChangeNormalMaterial));
+        ChangeAttackedMaterial();
         Invoke(nameof(ChangeNormalMaterial), 1f);
         currentHealth -= damage;
         bossHealthBar.SetHealth(currentHealth);
@@ -58,6 +57,11 @@ public class TestBossStates : MonoBehaviour
     public void ChangeNormalMaterial()
     {
         bossRenderer.sharedMaterial = normalMaterial;
+    }
+    public void ChangeAttackedMaterial()
+    {
+        CancelInvoke(nameof(ChangeNormalMaterial));
+        bossRenderer.sharedMaterial = attackedMaterial;
     }
     void Died()
     {

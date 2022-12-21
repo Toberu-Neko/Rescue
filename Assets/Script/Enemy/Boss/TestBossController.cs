@@ -14,6 +14,7 @@ public class TestBossController : MonoBehaviour
     public LayerMask attackIgnoreLayer;
     public GameObject attackSphare;
 
+    private Animator animator;
     [SerializeField] private GameObject knockBackSphare;
     private BossKnockback bossKnockback;
     [SerializeField] private float knockbackMaxSacle;
@@ -40,6 +41,7 @@ public class TestBossController : MonoBehaviour
         forceMotion = PlayerManager.instance.player.GetComponent<ForceMotionNew>();
         testBossStates = gameObject.GetComponent<TestBossStates>();
         bossKnockback = knockBackSphare.GetComponent<BossKnockback>();
+        animator = transform.Find("Design/BlueBoss").gameObject.GetComponent<Animator>();
 
         bossHealthBar = UIManager.instance.UI.transform.Find("HUD/BossHealthBar").gameObject;
         knockBackSphare.SetActive(false);
@@ -92,7 +94,7 @@ public class TestBossController : MonoBehaviour
     IEnumerator MaxHealthMinuse25()
     {
         testBossStates.invincible = true;
-        testBossStates.ChangeNormalMaterial();
+        testBossStates.ChangeAttackedMaterial();
         Vector3 _originScale = knockBackSphare.transform.localScale;
         knockBackSphare.SetActive(true);
         while (knockBackSphare.transform.localScale.y < knockbackMaxSacle-0.8f)
@@ -101,6 +103,10 @@ public class TestBossController : MonoBehaviour
             //Debug.Log(knockBackSphare.transform.localScale.y);
             yield return new WaitForSeconds(.07f) ;
         }
+        animator.SetBool("Attack", true);
+        Debug.Log("Set bool true");
+        yield return new WaitForSeconds(1.15f);
+        animator.SetBool("Attack", false);
         bossKnockback.dealDamage = true;
         /*if(Physics.CheckSphere(knockBackSphare.transform.position, knockbackMaxSacle - 0.8f, playerLayer))
         {
@@ -110,7 +116,7 @@ public class TestBossController : MonoBehaviour
             Invoke(nameof(speedControlAbleTrue), 1f);
         }*/
         yield return new WaitForSeconds(.03f);
-        //knockBackSphareCollider.enabled = false;
+        testBossStates.ChangeNormalMaterial();
         knockBackSphare.transform.localScale = _originScale;
         knockBackSphare.SetActive(false);
         attackAble = true;

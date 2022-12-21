@@ -236,7 +236,7 @@ namespace Com.Neko.ThreeDGameProjecct
                 if (OnSlope() && rig.velocity.y < 0.2f)
                 {
                     state = MovementState.sliding;
-                    
+
                     desiredMoveSpeed = slideSpeed;
                 }
                 else
@@ -245,12 +245,12 @@ namespace Com.Neko.ThreeDGameProjecct
                     desiredMoveSpeed = crouchSpeed;
                 }
             }
-          /*  else if (Input.GetKey(crouchKey) && !playerStates.isAiming)
-            {
-                state = MovementState.crouching;
-                desiredMoveSpeed = crouchSpeed;
-            }*/
-            else if (isGrounded && Input.GetKey(sprintKey) && !playerStates.isAiming)
+            /*  else if (Input.GetKey(crouchKey) && !playerStates.isAiming)
+              {
+                  state = MovementState.crouching;
+                  desiredMoveSpeed = crouchSpeed;
+              }*/
+            else if (isGrounded && Input.GetKey(sprintKey) && !playerStates.isAiming && rig.velocity != Vector3.zero)
             {
                 state = MovementState.sprinting;
                 desiredMoveSpeed = sprintSpeed;

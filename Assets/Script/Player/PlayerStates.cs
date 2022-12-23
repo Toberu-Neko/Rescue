@@ -118,6 +118,7 @@ public class PlayerStates : MonoBehaviour
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         takeDamageTimer = 0;
+        AudioManager.instance.Play("Hit");
 
         if(currentHealth <= 0)
         {

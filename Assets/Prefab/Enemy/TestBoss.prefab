@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05b9950262c02a47a40ef6eb06cdc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 400
+  maxHealth: 1000
   invincible: 0
   normalMaterial: {fileID: 2100000, guid: bef4fb07f311e8a41902293df8493cf3, type: 2}
   attackedMaterial: {fileID: 2100000, guid: 48c60db01529e8246b5f17bebb635968, type: 2}

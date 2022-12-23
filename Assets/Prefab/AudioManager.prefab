@@ -53,3 +53,19 @@ MonoBehaviour:
     pitchRandomRangeMax: 0
     loop: 0
     source: {fileID: 0}
+  - name: Hit
+    clip: {fileID: 8300000, guid: f58fae3edf10c9042bc940a892cee763, type: 3}
+    volume: 0.3
+    pitch: 1.8
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: '                 AudioManager.instance.Play("HitEnemy");'
+    clip: {fileID: 8300000, guid: 04f5f349ce69d8c46b11c5d0979b3043, type: 3}
+    volume: 0.3
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}

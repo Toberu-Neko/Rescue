@@ -13,8 +13,8 @@ public class PlayerDataInitialization : MonoBehaviour
         playerData.playTime = 0;
         playerData.gameEnded = false;
 
-        playerData.maxHealth = 100;
-        playerData.currentHealth = 50;
+        playerData.maxHealth = 150;
+        playerData.currentHealth = playerData.maxHealth / 2;
         playerData.position = L1Position;
         playerData.nowGoal = "現在還沒有目標。";
 

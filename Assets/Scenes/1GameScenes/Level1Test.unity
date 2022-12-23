@@ -11538,7 +11538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &752249979
 Transform:
   m_ObjectHideFlags: 0
@@ -22985,6 +22985,10 @@ PrefabInstance:
       propertyPath: upForce
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 5251546310445958699, guid: 2518f5984bdf3d049ac30f35063b49e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7370287663794071796, guid: 2518f5984bdf3d049ac30f35063b49e3, type: 3}
       propertyPath: m_Name
       value: JumpPad (2)
@@ -22995,7 +22999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7370287663794071807, guid: 2518f5984bdf3d049ac30f35063b49e3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7370287663794071807, guid: 2518f5984bdf3d049ac30f35063b49e3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23035,6 +23039,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7370287663794071807, guid: 2518f5984bdf3d049ac30f35063b49e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370287663794071807, guid: 2518f5984bdf3d049ac30f35063b49e3, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

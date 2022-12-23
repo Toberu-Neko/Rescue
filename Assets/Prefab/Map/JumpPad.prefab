@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upForce: 20
+  renderDistance: 50
 --- !u!1001 &4691474903607283387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195,6 +196,10 @@ PrefabInstance:
       propertyPath: scalingMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 718968568746534401, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 718968568819515263, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
       propertyPath: scalingMode
       value: 0
@@ -203,9 +208,17 @@ PrefabInstance:
       propertyPath: scalingMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 718968568833741768, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 718968568848246743, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
       propertyPath: scalingMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718968568848246743, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 718968569128123236, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
       propertyPath: scalingMode
@@ -219,13 +232,25 @@ PrefabInstance:
       propertyPath: scalingMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 718968569258321186, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 718968569428058841, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
       propertyPath: scalingMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 718968569428058841, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 718968569428492000, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
       propertyPath: scalingMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718968569428492000, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 718968569484008115, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
       propertyPath: scalingMode
@@ -238,6 +263,10 @@ PrefabInstance:
     - target: {fileID: 718968569765365910, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
       propertyPath: scalingMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718968569765365910, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 718968569916620206, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
       propertyPath: scalingMode
@@ -255,9 +284,17 @@ PrefabInstance:
       propertyPath: scalingMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 718968570275795714, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 718968570309335238, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
       propertyPath: scalingMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718968570309335238, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a376e9375b817d4ba8f71758e7af071, type: 3}

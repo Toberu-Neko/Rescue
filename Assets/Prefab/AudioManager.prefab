@@ -47,7 +47,7 @@ MonoBehaviour:
   sounds:
   - name: Typing
     clip: {fileID: 8300000, guid: f27b7172eb5d6bd43aa56075bd053e20, type: 3}
-    volume: 0.8
+    volume: 0.3
     pitch: 2.3
     pitchRandomRangeMin: -0.8
     pitchRandomRangeMax: 0
@@ -61,9 +61,33 @@ MonoBehaviour:
     pitchRandomRangeMax: 0
     loop: 0
     source: {fileID: 0}
-  - name: '                 AudioManager.instance.Play("HitEnemy");'
+  - name: HitEnemy
     clip: {fileID: 8300000, guid: 04f5f349ce69d8c46b11c5d0979b3043, type: 3}
     volume: 0.3
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Meow1
+    clip: {fileID: 8300000, guid: 856b41cfb297589469f581c436c4610e, type: 3}
+    volume: 0.2
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Meow2
+    clip: {fileID: 8300000, guid: 61970542c5698074587efc6906c47bd9, type: 3}
+    volume: 0.2
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Meow3
+    clip: {fileID: 8300000, guid: c8ed0ae0bc828db4bb7011a8fb407d29, type: 3}
+    volume: 0.2
     pitch: 1
     pitchRandomRangeMin: 0
     pitchRandomRangeMax: 0

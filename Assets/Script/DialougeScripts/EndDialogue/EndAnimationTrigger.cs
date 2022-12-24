@@ -23,6 +23,7 @@ public class EndAnimationTrigger : MonoBehaviour
     private PauseMenu pauseMenu;
     //player
     private PlayerStates playerStates;
+    PlayerData playerData;
     private GameObject notePressE;
     private TextMeshProUGUI notePressEText;
 
@@ -34,8 +35,9 @@ public class EndAnimationTrigger : MonoBehaviour
     bool playerInRange;
     void Start()
     {
+        playerData = PlayerManager.instance.playerData;
         playerStates = PlayerManager.instance.player.GetComponent<PlayerStates>();
-        if (playerStates.gameEnded)
+        if (playerData.gameEnded)
         {
             enabled = false;
         }
@@ -49,7 +51,12 @@ public class EndAnimationTrigger : MonoBehaviour
 
     void Update()
     {
-        if (dialogueManager.dialogueEnded && dialogueCount < endDialogue.Length && playerStates.gameEnded)
+        if (playerData.gameEnded)
+        {
+            enabled = false;
+            return;
+        }
+        if (dialogueManager.dialogueEnded && dialogueCount < endDialogue.Length && playerData.gameEnded)
         {
             dialogueTextGameobj.SetActive(false);
             dialogueManager.dialogueEnded = false;

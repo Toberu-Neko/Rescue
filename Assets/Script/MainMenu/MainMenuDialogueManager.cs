@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuDialogueManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private GameObject confirmSkipUI;
-
+    [SerializeField] private PlayerData playerData;
 
     private Queue<string> sentences;
     public bool dialogueEnded;
@@ -30,13 +31,17 @@ public class MainMenuDialogueManager : MonoBehaviour
         }
         if (Cursor.lockState == CursorLockMode.None && Input.GetKeyDown(KeyCode.Mouse0) && sentenceFinished && !dialogueEnded && !confirmSkipUI.activeInHierarchy)
         {
-            DisplayNextSentence();
+            if(SceneManager.GetActiveScene().buildIndex == 0)
+                DisplayNextSentence();
+
+            if(SceneManager.GetActiveScene().buildIndex == 2 && !playerData.gameEnded)
+                DisplayNextSentence();
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0) && !sentenceFinished)
         {
             skipAnimation = true;
         }
-        else if (Cursor.lockState == CursorLockMode.None && Input.GetKeyDown(KeyCode.Space) && !confirmSkipUI.activeInHierarchy && !dialogueEnded)
+        else if (Cursor.lockState == CursorLockMode.None && Input.GetKeyDown(KeyCode.Space) && !confirmSkipUI.activeInHierarchy && !dialogueEnded && SceneManager.GetActiveScene().buildIndex == 0)
         {
             skipDialogueTimer = 1f;
             confirmSkipUI.SetActive(true);

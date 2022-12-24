@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class TestBossStates : MonoBehaviour
 {
@@ -86,6 +85,7 @@ public class TestBossStates : MonoBehaviour
 
     public void HealthBarActive()
     {
+        bossHealthBar = bossHealthBarObj.GetComponent<HealthBar>();
         bossHealthBarObj.SetActive(true);
         bossHealthBar.SetHealth(currentHealth);
     }

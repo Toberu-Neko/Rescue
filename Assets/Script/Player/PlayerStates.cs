@@ -111,6 +111,10 @@ public class PlayerStates : MonoBehaviour
             regenComplete = false;
             StartCoroutine(RegenDelay());
         }
+        if(transform.position.y < -20)
+        {
+            Died();
+        }
     }
     
     public void TakeDamage(int damage)

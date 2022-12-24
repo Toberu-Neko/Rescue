@@ -27,7 +27,7 @@ public class Transport : MonoBehaviour
             playerData.nowGoal = playerStates.nowGoal;
             playerData.playTime = playerStates.playTime;
 
-            levelLoader.LoadLevel(2);
+            levelLoader.LoadLevel(tpScene);
         }
     }
 }

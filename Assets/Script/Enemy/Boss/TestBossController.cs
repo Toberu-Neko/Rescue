@@ -116,6 +116,7 @@ public class TestBossController : MonoBehaviour
             Invoke(nameof(speedControlAbleTrue), 1f);
         }*/
         yield return new WaitForSeconds(.03f);
+        bossKnockback.dealDamage = false;
         testBossStates.ChangeNormalMaterial();
         knockBackSphare.transform.localScale = _originScale;
         knockBackSphare.SetActive(false);

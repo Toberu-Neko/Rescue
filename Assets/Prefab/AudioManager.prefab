@@ -143,7 +143,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BGM_L1
     clip: {fileID: 8300000, guid: f9c6c6cc339ec4244b5608e34f1b8649, type: 3}
-    volume: 0.07
+    volume: 0.01
     pitch: 1
     pitchRandomRangeMin: 0
     pitchRandomRangeMax: 0
@@ -152,6 +152,14 @@ MonoBehaviour:
   - name: BGM_FinalAni
     clip: {fileID: 8300000, guid: d3d4c3abb74f45f448cb0190288680e5, type: 3}
     volume: 0.07
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM_Rain
+    clip: {fileID: 8300000, guid: 5e0f224a141cdea48834215b711821c9, type: 3}
+    volume: 0.1
     pitch: 1
     pitchRandomRangeMin: 0
     pitchRandomRangeMax: 0

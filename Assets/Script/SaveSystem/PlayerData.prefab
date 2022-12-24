@@ -46,10 +46,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScene: 1
   playTime: 0
-  maxHealth: 100
-  currentHealth: 50
-  position: {x: 187, y: 20, z: 392}
+  gameEnded: 0
+  maxHealth: 150
+  currentHealth: 75
+  position: {x: 718.3, y: 67.67, z: 219.8031}
   nowGoal: "\u73FE\u5728\u9084\u6C92\u6709\u76EE\u6A19\u3002"
+  skillSlot: 0
   swim: 1
   regen: 1
   throwStone: 1

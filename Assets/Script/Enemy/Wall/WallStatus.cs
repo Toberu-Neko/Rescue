@@ -6,7 +6,7 @@ public class WallStatus : MonoBehaviour
     [SerializeField] private float returnCD;
 
     Collider playerCollider;
-    private int currentHealth;
+    [HideInInspector]public int currentHealth;
     private Material material;
     private Color color;
     float timer;
@@ -36,7 +36,12 @@ public class WallStatus : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Ground");
             Physics.IgnoreCollision(GetComponent<Collider>(), playerCollider, false);
             timer += Time.deltaTime;
-            color.a = 1f-(timer / returnCD);
+            
+            color.a = 1f - (timer / returnCD);
+            if(color.a > 0.5f)
+            {
+                color.a = 1f;
+            }
             material.color = color;
             if (!returning)
             {

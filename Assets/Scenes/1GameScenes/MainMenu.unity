@@ -1127,6 +1127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 112531818}
   confirmSkipUI: {fileID: 1391846524}
+  playerData: {fileID: 3856543770987209638, guid: 50f1a348a3ce2674f90a6755ff44947d, type: 3}
   dialogueEnded: 0
 --- !u!1 &222285988
 GameObject:

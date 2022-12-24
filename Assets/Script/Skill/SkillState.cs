@@ -42,11 +42,33 @@ public class SkillState : MonoBehaviour
                 if (collision.gameObject.CompareTag("WaterCeiling"))
                 {
                     WallStatus wallStatus = collision.gameObject.GetComponent<WallStatus>();
+                    if(wallStatus.currentHealth > 0)
                     aud.Play();
+
                     wallStatus.TakeDamage(skill.damage); 
 
                 }
-                else if (collision.gameObject.layer == LayerMask.NameToLayer("Skill") || collision.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+                else if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+                {
+                    EnemyStates enemy = collision.gameObject.GetComponent<EnemyStates>();
+                    GameObject particle = Instantiate(hitParticle, transform.position, Quaternion.identity);
+                    Destroy(particle, 1f);
+                    aud.Play();
+                    enemy.EnemyTakeDamage(3);
+                }
+                else if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Bosses"))
+                {
+                    TestBossStates boss = collision.gameObject.GetComponent<TestBossStates>();
+                    GameObject particle = Instantiate(hitParticle, transform.position, Quaternion.identity);
+                    Destroy(particle, 1f);
+                    if (!boss.invincible)
+                        aud.Play();
+
+                    boss.BossTakeDamage(1);
+                }
+                else if (collision.gameObject.layer == LayerMask.NameToLayer("Skill") || 
+                    collision.collider.gameObject.layer == LayerMask.NameToLayer("Player") || 
+                    collision.collider.gameObject.layer == LayerMask.NameToLayer("EnemyAttack"))
                     return;
 
                 hitTarget = true;
@@ -79,7 +101,9 @@ public class SkillState : MonoBehaviour
                 boss.BossTakeDamage(skill.damage);
             }
 
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Skill")|| collision.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Skill")|| 
+                collision.collider.gameObject.layer == LayerMask.NameToLayer("Player") || 
+                collision.collider.gameObject.layer == LayerMask.NameToLayer("EnemyAttack"))
                 return;
 
 

@@ -12,13 +12,11 @@ public class MainMenu : MonoBehaviour
     private GameObject dialogueTextGameobj;
     private MainMenuDialogueManager mainMenuDialogueManager;
     int dialogueCount;
-    bool started;
     bool blackImagAlphaChanging;
     private void Start()
     {
         dialogueCount = 0;
         blackImagAlphaChanging = false;
-        started = false;
         mainMenuDialogueManager = dialogue.GetComponent<MainMenuDialogueManager>();
         levelLoader = GetComponent<LevelLoader>();
         dialogueTextGameobj = dialogue.transform.Find("DialougeText").gameObject;
@@ -49,7 +47,6 @@ public class MainMenu : MonoBehaviour
             if(lastBlackImage.alpha == 1)
             {
                 StartGameLoadScene();
-                started = true;
             }
         }
     }

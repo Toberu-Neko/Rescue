@@ -18,7 +18,7 @@ public class TestBossStates : MonoBehaviour
     [SerializeField] private Material normalMaterial;
     [SerializeField] private Material attackedMaterial;
 
-    bool damaged;
+    //bool damaged;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +31,7 @@ public class TestBossStates : MonoBehaviour
         bossHealthBarObj.SetActive(false);
 
         bossRenderer = transform.Find("Design/BlueBoss").gameObject.GetComponent<Renderer>();
-        damaged = false;
+        //damaged = false;
         invincible = false;
     }
     public void BossTakeDamage(int damage)

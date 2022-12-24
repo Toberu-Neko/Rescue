@@ -15,7 +15,12 @@ public class LevelLoader : MonoBehaviour
     }
     public void LoadLevel(int sceneIndex)
     {
-       StartCoroutine(LoadAsynchronously(sceneIndex));
+        AudioManager.instance.Stop("BGM_MainMenu"); 
+        AudioManager.instance.Stop("BGM_StartAni");
+        AudioManager.instance.Stop("BGM_L0");
+        AudioManager.instance.Stop("BGM_L1");
+        AudioManager.instance.Stop("BGM_FinalAni");
+        StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 
     IEnumerator LoadAsynchronously(int sceneIndex)

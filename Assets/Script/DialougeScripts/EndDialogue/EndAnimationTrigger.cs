@@ -16,7 +16,6 @@ public class EndAnimationTrigger : MonoBehaviour
     [SerializeField] private GameObject endCanvas;
     private MainMenuDialogueManager dialogueManager;
     int dialogueCount;
-    bool started;
     bool blackImagAlphaChanging;
 
     [Header("UI")]
@@ -46,7 +45,6 @@ public class EndAnimationTrigger : MonoBehaviour
         enemyInRange = GetComponent<EnemyInRange>();
         dialogueManager = GetComponent<MainMenuDialogueManager>();
         playerInRange = false;
-        started = false;
     }
 
     void Update()

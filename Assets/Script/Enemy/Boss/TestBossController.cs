@@ -104,7 +104,7 @@ public class TestBossController : MonoBehaviour
             yield return new WaitForSeconds(.07f) ;
         }
         animator.SetBool("Attack", true);
-        Debug.Log("Set bool true");
+        //Debug.Log("Set bool true");
         yield return new WaitForSeconds(1.15f);
         animator.SetBool("Attack", false);
         bossKnockback.dealDamage = true;

@@ -210,7 +210,9 @@ public class PlayerCombat : MonoBehaviour
 
             if (enemy.gameObject.layer == LayerMask.NameToLayer("Bosses"))
             {
-                enemy.GetComponent<TestBossStates>().BossTakeDamage(attackDamage);
+                TestBossStates _tbs = enemy.GetComponent<TestBossStates>();
+                if(_tbs != null)
+                    _tbs.BossTakeDamage(attackDamage);
             }
             GameObject particle = Instantiate(hitParticle, attackDetector.transform.position, Quaternion.identity);
             Destroy(particle, 1f);

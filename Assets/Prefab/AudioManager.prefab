@@ -95,7 +95,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Click
     clip: {fileID: 8300000, guid: 11130d5cd0db31044bd74cc7c4dba59e, type: 3}
-    volume: 0.2
+    volume: 0.3
     pitch: 1
     pitchRandomRangeMin: 0
     pitchRandomRangeMax: 0
@@ -116,4 +116,44 @@ MonoBehaviour:
     pitchRandomRangeMin: -0.2
     pitchRandomRangeMax: 0.2
     loop: 0
+    source: {fileID: 0}
+  - name: BGM_MainMenu
+    clip: {fileID: 8300000, guid: f1d7b61ad6fc98b4495a199817f8a35c, type: 3}
+    volume: 0.07
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM_StartAni
+    clip: {fileID: 8300000, guid: b1682bfc275fa864cb9d7f84002e2aba, type: 3}
+    volume: 0.07
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM_L0
+    clip: {fileID: 8300000, guid: 65925218631bb1f4897306aa89b18e0a, type: 3}
+    volume: 0.1
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM_L1
+    clip: {fileID: 8300000, guid: f9c6c6cc339ec4244b5608e34f1b8649, type: 3}
+    volume: 0.07
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM_FinalAni
+    clip: {fileID: 8300000, guid: d3d4c3abb74f45f448cb0190288680e5, type: 3}
+    volume: 0.07
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 1
     source: {fileID: 0}

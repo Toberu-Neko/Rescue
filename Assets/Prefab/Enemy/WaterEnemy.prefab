@@ -190,6 +190,8 @@ MonoBehaviour:
   maxHealth: 100
   enemyHealthBar: {fileID: 6742423613582616002}
   enemyHealthBarObj: {fileID: 6742423613582616000}
+  grassDied: {fileID: 3741559923264993030, guid: bb7ab91b5baa3ba4c8dfb2caada173e4, type: 3}
+  waterDied: {fileID: 3845190983993489360, guid: 3ba591c4fb1d7084a93d9125b9fb572d, type: 3}
   waterNormal: {fileID: 2100000, guid: aa410045604a305438e3061f99174184, type: 2}
   waterAttacked: {fileID: 2100000, guid: 9b43a176cb79c214a873872b83a7e8c0, type: 2}
   grassNormal: {fileID: 2100000, guid: 73a5505ea8d248e4a9fde6ffc4227ced, type: 2}

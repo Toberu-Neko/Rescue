@@ -192,6 +192,7 @@ public class PlayerCombat : MonoBehaviour
     {
         //Play an attack animation
         forceMotionNew.standingTimer = 0;
+        AudioManager.instance.Play("PlayerAttack");
         StopAllCoroutines();
         //animator.SetBool("Attack", true);
         StartCoroutine(DebugSphareActive());

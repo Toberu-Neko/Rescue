@@ -270,7 +270,7 @@ namespace Com.Neko.ThreeDGameProjecct
                 state = MovementState.air;
             }
             //檢查是否立即變更desiredMoveSpeed
-            if (Mathf.Abs(desiredMoveSpeed - lastDesiredMoveSpeed) > sprintSpeed - walkSpeed && moveSpeed != 0) 
+            if (Mathf.Abs(desiredMoveSpeed - lastDesiredMoveSpeed) > sprintSpeed - crouchSpeed -1 && moveSpeed != 0) 
             {
                 StopAllCoroutines();
                 StartCoroutine(SmoothlyLerpMoveSpeed());

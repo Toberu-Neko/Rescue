@@ -54,9 +54,9 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Hit
-    clip: {fileID: 8300000, guid: f58fae3edf10c9042bc940a892cee763, type: 3}
-    volume: 0.3
-    pitch: 1.8
+    clip: {fileID: 8300000, guid: 27baf2d270ae5f645b76bfd3f927d324, type: 3}
+    volume: 0.15
+    pitch: 1
     pitchRandomRangeMin: 0
     pitchRandomRangeMax: 0
     loop: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
   - name: HitEnemy
     clip: {fileID: 8300000, guid: 04f5f349ce69d8c46b11c5d0979b3043, type: 3}
     volume: 0.3
-    pitch: 1
+    pitch: 1.2
     pitchRandomRangeMin: 0
     pitchRandomRangeMax: 0
     loop: 0
@@ -91,5 +91,29 @@ MonoBehaviour:
     pitch: 1
     pitchRandomRangeMin: 0
     pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: 11130d5cd0db31044bd74cc7c4dba59e, type: 3}
+    volume: 0.2
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: PointerEnter
+    clip: {fileID: 8300000, guid: 9a300387467e5ad4eb3099b2574e3bd6, type: 3}
+    volume: 0.2
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerAttack
+    clip: {fileID: 8300000, guid: 9303c3f9ae98d7b47a30e354146cc2d6, type: 3}
+    volume: 0.1
+    pitch: 2.2
+    pitchRandomRangeMin: -0.2
+    pitchRandomRangeMax: 0.2
     loop: 0
     source: {fileID: 0}

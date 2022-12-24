@@ -152,7 +152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528053664054154958}
   m_LocalRotation: {x: -0.17785586, y: 0.112526506, z: -0.020456944, w: -0.9773876}
-  m_LocalPosition: {x: -0.3, y: 1.0999999, z: -4.5}
+  m_LocalPosition: {x: 0, y: 1.0999985, z: -4.5}
   m_LocalScale: {x: -1.1363636, y: 1.3888884, z: 1.3888886}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1387,6 +1387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  gameEnded: 0
   quest:
     index: 0
     isActive: 0
@@ -1432,7 +1433,7 @@ MonoBehaviour:
   walkSpeed: 7
   sprintSpeed: 14
   groundDrag: 3
-  slideSpeed: 30
+  slideSpeed: 40
   jumpPadForce: 0
   airMultiplier: 0.6
   speedIncreaseMultiplier: 1.5
@@ -1443,7 +1444,7 @@ MonoBehaviour:
   crouchSpeed: 5
   crouchSuckToGorundMutiplier: 5
   crouchYScale: 0.15
-  slideMinAngle: 15
+  slideMinAngle: 8
   jumpKey: 32
   sprintKey: 304
   playerTransform: {fileID: 6157927872783704879}

@@ -304,11 +304,11 @@ MonoBehaviour:
   debugSphare: {fileID: 4028435371404429259}
   DamageSphare: {fileID: 4028435369659233697}
   attackRange: 3
-  attackChargeTime: 0.4
-  attackColldown: 0.6
-  attackDamage: 7
+  attackChargeTime: 0.75
+  attackColldown: 0.8
+  attackDamage: 6
   walkPointRange: 12
-  maxPatrolDistance: 25
+  maxPatrolDistance: 30
   attackParticle: {fileID: 9632187318480447}
 --- !u!1 &4028435370278469008
 GameObject:

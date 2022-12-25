@@ -56,6 +56,7 @@ public class PlayerCombat : MonoBehaviour
     private PlayerStates playerStates;
     private ForceMotionNew forceMotionNew;
     private GameObject hitParticle;
+    private TemporarySkill temporarySkill;
     private float aimDetectRange;
     bool refillAble;
     bool attackAble;
@@ -78,6 +79,7 @@ public class PlayerCombat : MonoBehaviour
     void Start()
     {
         stoneParticle = transform.Find("Particle/Rock").gameObject;
+        temporarySkill = GetComponent<TemporarySkill>();
         hitParticle = ParticleManager.instance.hitParticle;
         animator = transform.Find("CatPlayerOBJ(Rotation here)/Cat").gameObject.GetComponent<Animator>();
         mainCameraTransform = PlayerManager.instance.mainCamera.transform;
@@ -271,26 +273,40 @@ public class PlayerCombat : MonoBehaviour
         previousSkillSlot = playerStates.skillSlot;
         if (skillSlot == -1)
         {
-            skillCdCircle.fillAmount = 1;
+            waterCdCircle.enabled = true;
             skillCdCircle.enabled = false;
+            skillCdCircle.fillAmount = 1;
+            
             objectToThrow = SkillManager.instance.waterTemporary;
         }
         if(skillSlot == 0)
         {
+            waterCdCircle.enabled = false;
+            skillCdCircle.enabled = false;
+            temporarySkill.skillSelected = false;
             objectToThrow = SkillManager.instance.noSkill;
         }
         if (skillSlot == 1 && playerStates.throwStoneAble)
         {
+            waterCdCircle.enabled = false;
+            skillCdCircle.enabled = true;
+            temporarySkill.skillSelected = false;
             objectToThrow = SkillManager.instance.testWater;
             stoneParticle.SetActive(true);
         }
         if (skillSlot == 2 && playerStates.throwFireAble)
         {
+            waterCdCircle.enabled = false;
+            skillCdCircle.enabled = true;
+            temporarySkill.skillSelected = false;
             objectToThrow = SkillManager.instance.fire;
             stoneParticle.SetActive(false);
         }
         if (skillSlot == 3 && playerStates.throwDebugAble)
         {
+            waterCdCircle.enabled = false;
+            skillCdCircle.enabled = true;
+            temporarySkill.skillSelected = false;
             objectToThrow = SkillManager.instance.debug;
             stoneParticle.SetActive(true);
         }

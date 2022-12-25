@@ -210,13 +210,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackAmount: 3
-  attackCooldown: 0.3
-  attackGap: 0.2
+  attackCooldown: 0.75
+  attackGap: 0.3
   maxAttackAngle: 20
   attackDamage: 3
-  throwForce: 8
-  waterBallDieTime: 5
-  lookRadius: 18
+  throwForce: 9
+  waterBallDieTime: 3.5
+  lookRadius: 20
   attackRadius: 12.5
   walkPointRange: 15
   maxPatrolDistance: 30

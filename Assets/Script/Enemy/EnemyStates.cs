@@ -10,7 +10,11 @@ public class EnemyStates : MonoBehaviour
     private int currentHealth;
     public HealthBar enemyHealthBar;
     public GameObject enemyHealthBarObj;
-    private Renderer renderer;
+    private Renderer enemyRenderer;
+    private GameObject enemyModel;
+
+    [SerializeField] private GameObject grassDied;
+    [SerializeField] private GameObject waterDied;
 
     [SerializeField] private Material waterNormal;
     [SerializeField] private Material waterAttacked;
@@ -22,7 +26,8 @@ public class EnemyStates : MonoBehaviour
     [HideInInspector] public bool damaged;
     void Start()
     {
-        renderer = transform.Find("¼Ò«¬/EM").gameObject.GetComponent<Renderer>();
+        enemyModel = transform.Find("¼Ò«¬").gameObject;
+        enemyRenderer = transform.Find("¼Ò«¬/EM").gameObject.GetComponent<Renderer>();
         died = false;
         damaged = false;
         inCombat = false;
@@ -34,12 +39,12 @@ public class EnemyStates : MonoBehaviour
 
     void Update()
     {
-        if (inCombat)
+        if (inCombat && !died && !enemyHealthBarObj.activeInHierarchy)
         {
             enemyHealthBarObj.SetActive(true);
             combatTimer += Time.deltaTime;
         }
-        if (combatTimer > 3f)
+        else if (combatTimer > 3f && enemyHealthBarObj.activeInHierarchy)
         {
             inCombat = false;
             enemyHealthBarObj.SetActive(false);
@@ -51,9 +56,9 @@ public class EnemyStates : MonoBehaviour
         inCombat = true;
         combatTimer = 0;
         if (GetComponent<EnemyController>() != null)
-            renderer.sharedMaterial = grassAttacked;
+            enemyRenderer.sharedMaterial = grassAttacked;
         else if (GetComponent<WaterEnemyController>() != null)
-            renderer.sharedMaterial = waterAttacked;
+            enemyRenderer.sharedMaterial = waterAttacked;
         CancelInvoke(nameof(DamagedFalse));
         Invoke(nameof(DamagedFalse), 1f);
         currentHealth -= damage;
@@ -62,27 +67,37 @@ public class EnemyStates : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            enemyHealthBarObj.SetActive(false);
+            enemyModel.SetActive(false);
+
             currentHealth = 0;
+            died = true;
             Died();
+
         }
     }
     public void DamagedFalse()
     {
         if (GetComponent<EnemyController>() != null)
-            renderer.sharedMaterial = grassNormal;
+            enemyRenderer.sharedMaterial = grassNormal;
         else if (GetComponent<WaterEnemyController>() != null)
-            renderer.sharedMaterial = waterNormal;
+            enemyRenderer.sharedMaterial = waterNormal;
     }
     void Died()
     {
-        //Die animation
-        died = true;
-        //Disable enemy
         GetComponent<Collider>().enabled = false;
         if (GetComponent<EnemyController>() != null)
+        {
             GetComponent<EnemyController>().enabled = false;
+            GameObject particle = Instantiate(grassDied, transform.position, grassDied.transform.rotation);
+            Destroy(particle, .3f);
+        }
         else if (GetComponent<WaterEnemyController>() != null)
+        {
             GetComponent<WaterEnemyController>().enabled = false;
+            GameObject particle = Instantiate(waterDied, transform.position, grassDied.transform.rotation);
+            Destroy(particle, .3f);
+        }
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<NavMeshAgent>().enabled = false;
         Destroy(gameObject, 5f);

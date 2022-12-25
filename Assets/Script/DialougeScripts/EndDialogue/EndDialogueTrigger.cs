@@ -13,8 +13,8 @@ public class EndDialogueTrigger : MonoBehaviour
     [Tooltip("放置會不斷重複的對話")]
     public DialogueScriptableObj[] repeatDialogue;
 
-    public DialogueScriptableObj giveQuestDia;
-    public DialogueScriptableObj completeQuestDia;
+    [HideInInspector] public DialogueScriptableObj giveQuestDia;
+    [HideInInspector] public DialogueScriptableObj completeQuestDia;
 
     private EnemyInRange enemyInRange;
     private DialogueManager dialogueManager;
@@ -35,7 +35,8 @@ public class EndDialogueTrigger : MonoBehaviour
     {
         GameObject.Find("EndCanvas").SetActive(false);
         playerStates = PlayerManager.instance.player.GetComponent<PlayerStates>();
-        if (!playerStates.gameEnded)
+        playerData = PlayerManager.instance.playerData;
+        if (!playerData.gameEnded)
         {
             enabled = false;
         }
@@ -46,7 +47,6 @@ public class EndDialogueTrigger : MonoBehaviour
         dialogueManager = UIManager.instance.dialogueManager;
         notePressE = PlayerManager.instance.player.transform.Find("WorldSpaceCanvas/PressEToTalkNote").gameObject;
         notePressEText = notePressE.transform.Find("PressEToTalk").gameObject.GetComponent<TextMeshProUGUI>();
-        playerData = PlayerManager.instance.playerData;
         enemyInRange = GetComponent<EnemyInRange>();
         notePressE.SetActive(false);
         if(repeatDialogue.Length == 0)

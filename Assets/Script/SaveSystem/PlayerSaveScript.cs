@@ -49,7 +49,11 @@ public class PlayerSaveScript : MonoBehaviour
         playerData.maxHealth = data.maxHealth;
         playerData.gameEnded = data.gameEnded;
 
-        playerData.skillSlot = data.skillSlot;
+        if (data.skillSlot == -1)
+            playerData.skillSlot = 0;
+        else
+            playerData.skillSlot = data.skillSlot;
+
         playerData.swim = data.swim;
         playerData.regen = data.regen;
         playerData.throwStone = data.throwStone;

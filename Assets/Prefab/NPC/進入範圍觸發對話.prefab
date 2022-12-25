@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 5082540921138351354}
   - component: {fileID: 5082540921138351235}
   - component: {fileID: 3046226356915057575}
+  - component: {fileID: 4310478187929437956}
   m_Layer: 6
   m_Name: "\u9032\u5165\u7BC4\u570D\u89F8\u767C\u5C0D\u8A71"
   m_TagString: Untagged
@@ -143,6 +144,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 0}
+--- !u!65 &4310478187929437956
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082540921138351355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 2.4248772, y: 24.709454, z: 6.284189}
+  m_Center: {x: 0, y: 11.854727, z: 0}
 --- !u!1 &5082540921148399488
 GameObject:
   m_ObjectHideFlags: 0

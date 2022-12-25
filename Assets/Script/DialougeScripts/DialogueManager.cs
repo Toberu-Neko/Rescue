@@ -77,6 +77,7 @@ public class DialogueManager : MonoBehaviour
         {
             skipAble = true;
             pressSpaceNote.SetActive(true);
+            AudioManager.instance.Play("Meow" + Random.Range(1, 4));
         }
         Time.timeScale = 0f;
         goalParent.SetActive(false);

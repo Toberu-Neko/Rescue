@@ -111,6 +111,10 @@ public class PlayerStates : MonoBehaviour
             regenComplete = false;
             StartCoroutine(RegenDelay());
         }
+        if(transform.position.y < -20)
+        {
+            Died();
+        }
     }
     
     public void TakeDamage(int damage)
@@ -118,6 +122,7 @@ public class PlayerStates : MonoBehaviour
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         takeDamageTimer = 0;
+        AudioManager.instance.Play("Hit");
 
         if(currentHealth <= 0)
         {

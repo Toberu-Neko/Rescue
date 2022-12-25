@@ -47,9 +47,121 @@ MonoBehaviour:
   sounds:
   - name: Typing
     clip: {fileID: 8300000, guid: f27b7172eb5d6bd43aa56075bd053e20, type: 3}
-    volume: 0.8
+    volume: 0.3
     pitch: 2.3
     pitchRandomRangeMin: -0.8
     pitchRandomRangeMax: 0
     loop: 0
+    source: {fileID: 0}
+  - name: Hit
+    clip: {fileID: 8300000, guid: 27baf2d270ae5f645b76bfd3f927d324, type: 3}
+    volume: 0.15
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: HitEnemy
+    clip: {fileID: 8300000, guid: 04f5f349ce69d8c46b11c5d0979b3043, type: 3}
+    volume: 0.3
+    pitch: 1.2
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Meow1
+    clip: {fileID: 8300000, guid: 856b41cfb297589469f581c436c4610e, type: 3}
+    volume: 0.2
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Meow2
+    clip: {fileID: 8300000, guid: 61970542c5698074587efc6906c47bd9, type: 3}
+    volume: 0.2
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Meow3
+    clip: {fileID: 8300000, guid: c8ed0ae0bc828db4bb7011a8fb407d29, type: 3}
+    volume: 0.2
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: 11130d5cd0db31044bd74cc7c4dba59e, type: 3}
+    volume: 0.3
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: PointerEnter
+    clip: {fileID: 8300000, guid: 9a300387467e5ad4eb3099b2574e3bd6, type: 3}
+    volume: 0.2
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerAttack
+    clip: {fileID: 8300000, guid: 9303c3f9ae98d7b47a30e354146cc2d6, type: 3}
+    volume: 0.1
+    pitch: 2.2
+    pitchRandomRangeMin: -0.2
+    pitchRandomRangeMax: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - name: BGM_MainMenu
+    clip: {fileID: 8300000, guid: f1d7b61ad6fc98b4495a199817f8a35c, type: 3}
+    volume: 0.07
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM_StartAni
+    clip: {fileID: 8300000, guid: b1682bfc275fa864cb9d7f84002e2aba, type: 3}
+    volume: 0.07
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM_L0
+    clip: {fileID: 8300000, guid: 65925218631bb1f4897306aa89b18e0a, type: 3}
+    volume: 0.1
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM_L1
+    clip: {fileID: 8300000, guid: f9c6c6cc339ec4244b5608e34f1b8649, type: 3}
+    volume: 0.01
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM_FinalAni
+    clip: {fileID: 8300000, guid: d3d4c3abb74f45f448cb0190288680e5, type: 3}
+    volume: 0.07
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM_Rain
+    clip: {fileID: 8300000, guid: 5e0f224a141cdea48834215b711821c9, type: 3}
+    volume: 0.1
+    pitch: 1
+    pitchRandomRangeMin: 0
+    pitchRandomRangeMax: 0
+    loop: 1
     source: {fileID: 0}

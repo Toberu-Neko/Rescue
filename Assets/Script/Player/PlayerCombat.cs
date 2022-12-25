@@ -192,6 +192,7 @@ public class PlayerCombat : MonoBehaviour
     {
         //Play an attack animation
         forceMotionNew.standingTimer = 0;
+        AudioManager.instance.Play("PlayerAttack");
         StopAllCoroutines();
         //animator.SetBool("Attack", true);
         StartCoroutine(DebugSphareActive());
@@ -209,7 +210,9 @@ public class PlayerCombat : MonoBehaviour
 
             if (enemy.gameObject.layer == LayerMask.NameToLayer("Bosses"))
             {
-                enemy.GetComponent<TestBossStates>().BossTakeDamage(attackDamage);
+                TestBossStates _tbs = enemy.GetComponent<TestBossStates>();
+                if(_tbs != null)
+                    _tbs.BossTakeDamage(attackDamage);
             }
             GameObject particle = Instantiate(hitParticle, attackDetector.transform.position, Quaternion.identity);
             Destroy(particle, 1f);

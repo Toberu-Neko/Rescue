@@ -172,6 +172,7 @@ public class EnemyController : MonoBehaviour
         attackComplete = true;
         walkAble = true;
         turnAble = true;
+        if(!enemyStates.died)
         agent.isStopped = false;
     }
 

@@ -11,7 +11,7 @@ public class SkillState : MonoBehaviour
     //public float throwRange;
     //public float cooldown;
 
-
+    private AudioSource aud;
     private Rigidbody rig;
     private SphereCollider col;
     private GameObject design;
@@ -21,15 +21,13 @@ public class SkillState : MonoBehaviour
         
         design = transform.Find("Design").gameObject;
 
+        aud = GetComponent<AudioSource>();
         col = GetComponent<SphereCollider>();
         rig = GetComponent<Rigidbody>();
         hitParticle = skill.hitParticle;
         Destroy(gameObject, skill.dieTime);
     }
 
-    void Update()
-    {
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -44,10 +42,33 @@ public class SkillState : MonoBehaviour
                 if (collision.gameObject.CompareTag("WaterCeiling"))
                 {
                     WallStatus wallStatus = collision.gameObject.GetComponent<WallStatus>();
-                    wallStatus.TakeDamage(skill.damage);
-                    Destroy(gameObject);
+                    if(wallStatus.currentHealth > 0)
+                    aud.Play();
+
+                    wallStatus.TakeDamage(skill.damage); 
+
                 }
-                else if (collision.gameObject.layer == LayerMask.NameToLayer("Skill") || collision.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+                else if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+                {
+                    EnemyStates enemy = collision.gameObject.GetComponent<EnemyStates>();
+                    GameObject particle = Instantiate(hitParticle, transform.position, Quaternion.identity);
+                    Destroy(particle, 1f);
+                    aud.Play();
+                    enemy.EnemyTakeDamage(3);
+                }
+                else if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Bosses"))
+                {
+                    TestBossStates boss = collision.gameObject.GetComponent<TestBossStates>();
+                    GameObject particle = Instantiate(hitParticle, transform.position, Quaternion.identity);
+                    Destroy(particle, 1f);
+                    if (!boss.invincible)
+                        aud.Play();
+
+                    boss.BossTakeDamage(1);
+                }
+                else if (collision.gameObject.layer == LayerMask.NameToLayer("Skill") || 
+                    collision.collider.gameObject.layer == LayerMask.NameToLayer("Player") || 
+                    collision.collider.gameObject.layer == LayerMask.NameToLayer("EnemyAttack"))
                     return;
 
                 hitTarget = true;
@@ -66,6 +87,7 @@ public class SkillState : MonoBehaviour
                 EnemyStates enemy = collision.gameObject.GetComponent<EnemyStates>();
                 GameObject particle = Instantiate(hitParticle, transform.position, Quaternion.identity);
                 Destroy(particle, 1f);
+                aud.Play();
                 enemy.EnemyTakeDamage(skill.damage);
             }
             if(collision.collider.gameObject.layer == LayerMask.NameToLayer("Bosses"))
@@ -73,10 +95,15 @@ public class SkillState : MonoBehaviour
                 TestBossStates boss = collision.gameObject.GetComponent<TestBossStates>();
                 GameObject particle = Instantiate(hitParticle, transform.position, Quaternion.identity);
                 Destroy(particle, 1f);
+                if(!boss.invincible)
+                aud.Play();
+
                 boss.BossTakeDamage(skill.damage);
             }
 
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Skill")|| collision.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Skill")|| 
+                collision.collider.gameObject.layer == LayerMask.NameToLayer("Player") || 
+                collision.collider.gameObject.layer == LayerMask.NameToLayer("EnemyAttack"))
                 return;
 
 

@@ -16,7 +16,6 @@ public class EndAnimationTrigger : MonoBehaviour
     [SerializeField] private GameObject endCanvas;
     private MainMenuDialogueManager dialogueManager;
     int dialogueCount;
-    bool started;
     bool blackImagAlphaChanging;
 
     [Header("UI")]
@@ -24,6 +23,7 @@ public class EndAnimationTrigger : MonoBehaviour
     private PauseMenu pauseMenu;
     //player
     private PlayerStates playerStates;
+    PlayerData playerData;
     private GameObject notePressE;
     private TextMeshProUGUI notePressEText;
 
@@ -35,8 +35,9 @@ public class EndAnimationTrigger : MonoBehaviour
     bool playerInRange;
     void Start()
     {
+        playerData = PlayerManager.instance.playerData;
         playerStates = PlayerManager.instance.player.GetComponent<PlayerStates>();
-        if (playerStates.gameEnded)
+        if (playerData.gameEnded)
         {
             enabled = false;
         }
@@ -46,12 +47,11 @@ public class EndAnimationTrigger : MonoBehaviour
         enemyInRange = GetComponent<EnemyInRange>();
         dialogueManager = GetComponent<MainMenuDialogueManager>();
         playerInRange = false;
-        started = false;
     }
 
     void Update()
     {
-        if (dialogueManager.dialogueEnded && dialogueCount < endDialogue.Length && playerStates.gameEnded)
+        if (dialogueManager.dialogueEnded && dialogueCount < endDialogue.Length && diaCanvasGroup[0].alpha != 0)
         {
             dialogueTextGameobj.SetActive(false);
             dialogueManager.dialogueEnded = false;
@@ -106,7 +106,7 @@ public class EndAnimationTrigger : MonoBehaviour
             diaCanvasGroup[i].alpha += 0.1f;
             yield return new WaitForSeconds(0.05f);
         }
-        //Debug.Log(i);
+        Debug.Log(i);
         yield return null;
         dialogueTextGameobj.SetActive(true);
         dialogueCount++;

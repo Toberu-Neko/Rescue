@@ -47,7 +47,7 @@ public class PlayerStates : MonoBehaviour
 
     void Start()
     {
-        takeDamageTimer = 0
+        takeDamageTimer = 0;
         //questFinished = new bool[QuestManager.instance.dialogueScriptableObjs.Length];
         playerData = PlayerManager.instance.playerData;
         talkingTo = QuestGoal.TalkToTarget.None;

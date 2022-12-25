@@ -9,6 +9,7 @@ public class TestBossStates : MonoBehaviour
     private HealthBar bossHealthBar;
     private GameObject bossHealthBarObj;
     private TestBossController bossController;
+    [SerializeField] private GameObject diedParticle;
     [HideInInspector] public bool invincible;
 
     
@@ -65,7 +66,9 @@ public class TestBossStates : MonoBehaviour
     void Died()
     {
         //Die animation
-
+        GameObject particle = Instantiate(diedParticle, transform.position, diedParticle.transform.rotation);
+        Destroy(particle, .3f);
+        transform.Find("Design").gameObject.SetActive(false);
         //Disable enemy
         GetComponent<Collider>().enabled = false;
         GetComponent<TestBossController>().enabled = false;

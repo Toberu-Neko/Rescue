@@ -147,7 +147,7 @@ public class TestBossController : MonoBehaviour
                 attackPoint.y = hit.point.y;
                 bossAttack.transform.SetParent(this.transform);
             }
-            yield return new WaitForSeconds(0.01f) ;
+            yield return new WaitForSeconds(0.001f) ;
         }
         if (attackCD > 0)
         {

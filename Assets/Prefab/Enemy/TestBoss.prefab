@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6059077900820723475
 Transform:
@@ -64,9 +64,9 @@ MonoBehaviour:
   attackSphare: {fileID: 5898683865962867055, guid: f7fc67f2ef14d4f498e0fbc5269c4dac, type: 3}
   knockBackSphare: {fileID: 6190876323318635063}
   knockbackMaxSacle: 8
-  attackCount: 100
-  attackDamage: 1
-  attackPrefabRadius: 5
+  attackCount: 500
+  attackDamage: 5
+  attackPrefabRadius: 4
   attackCD: 0.15
   damageCount: 0
 --- !u!114 &6059077900820723471
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05b9950262c02a47a40ef6eb06cdc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 800
   invincible: 0
   normalMaterial: {fileID: 2100000, guid: bef4fb07f311e8a41902293df8493cf3, type: 2}
   attackedMaterial: {fileID: 2100000, guid: 48c60db01529e8246b5f17bebb635968, type: 2}

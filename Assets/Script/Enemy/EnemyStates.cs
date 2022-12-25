@@ -21,11 +21,12 @@ public class EnemyStates : MonoBehaviour
     [SerializeField] private Material grassNormal;
     [SerializeField] private Material grassAttacked;
 
-    float combatTimer = 0;
+    float combatTimer;
     bool inCombat;
     [HideInInspector] public bool damaged;
     void Start()
     {
+        combatTimer = 0;
         enemyModel = transform.Find("¼Ò«¬").gameObject;
         enemyRenderer = transform.Find("¼Ò«¬/EM").gameObject.GetComponent<Renderer>();
         died = false;
@@ -39,12 +40,18 @@ public class EnemyStates : MonoBehaviour
 
     void Update()
     {
-        if (inCombat && !died && !enemyHealthBarObj.activeInHierarchy)
+        if (inCombat && !died)
         {
-            enemyHealthBarObj.SetActive(true);
+            if(!enemyHealthBarObj.activeInHierarchy)
+            {
+                enemyHealthBarObj.SetActive(true);
+            }
+
             combatTimer += Time.deltaTime;
+            Debug.Log(combatTimer);
         }
-        else if (combatTimer > 3f && enemyHealthBarObj.activeInHierarchy)
+        
+        if (combatTimer > 3f)
         {
             inCombat = false;
             enemyHealthBarObj.SetActive(false);

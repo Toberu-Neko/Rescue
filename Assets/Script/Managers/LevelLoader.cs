@@ -20,6 +20,7 @@ public class LevelLoader : MonoBehaviour
         AudioManager.instance.Stop("BGM_L0");
         AudioManager.instance.Stop("BGM_L1");
         AudioManager.instance.Stop("BGM_FinalAni");
+        AudioManager.instance.Stop("BGM_Rain");
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 

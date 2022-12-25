@@ -34,7 +34,7 @@ public class MainMenuDialogueManager : MonoBehaviour
             if(SceneManager.GetActiveScene().buildIndex == 0)
                 DisplayNextSentence();
 
-            if(SceneManager.GetActiveScene().buildIndex == 2 && !playerData.gameEnded)
+            if(SceneManager.GetActiveScene().buildIndex == 2)
                 DisplayNextSentence();
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0) && !sentenceFinished)

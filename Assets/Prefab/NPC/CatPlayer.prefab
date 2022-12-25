@@ -1499,7 +1499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 1
-  attackDamage: 100
+  attackDamage: 500
   attackCooldown: 0.6
   attackDetector: {fileID: 6157927873191186147}
   enemyLayers:

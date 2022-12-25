@@ -51,12 +51,7 @@ public class EndAnimationTrigger : MonoBehaviour
 
     void Update()
     {
-        if (playerData.gameEnded)
-        {
-            enabled = false;
-            return;
-        }
-        if (dialogueManager.dialogueEnded && dialogueCount < endDialogue.Length && playerData.gameEnded)
+        if (dialogueManager.dialogueEnded && dialogueCount < endDialogue.Length && diaCanvasGroup[0].alpha != 0)
         {
             dialogueTextGameobj.SetActive(false);
             dialogueManager.dialogueEnded = false;
@@ -111,7 +106,7 @@ public class EndAnimationTrigger : MonoBehaviour
             diaCanvasGroup[i].alpha += 0.1f;
             yield return new WaitForSeconds(0.05f);
         }
-        //Debug.Log(i);
+        Debug.Log(i);
         yield return null;
         dialogueTextGameobj.SetActive(true);
         dialogueCount++;

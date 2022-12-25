@@ -64,10 +64,10 @@ MonoBehaviour:
   attackSphare: {fileID: 5898683865962867055, guid: f7fc67f2ef14d4f498e0fbc5269c4dac, type: 3}
   knockBackSphare: {fileID: 6190876323318635063}
   knockbackMaxSacle: 8
-  attackCount: 500
-  attackDamage: 5
-  attackPrefabRadius: 4
-  attackCD: 0.15
+  attackCount: 100
+  attackDamage: 7
+  attackPrefabRadius: 4.5
+  attackCD: 0.1
   damageCount: 0
 --- !u!114 &6059077900820723471
 MonoBehaviour:
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125c18d6836b303499ed5eaaf24b33e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 10
   dealDamage: 0
 --- !u!1001 &314148554987880000
 PrefabInstance:

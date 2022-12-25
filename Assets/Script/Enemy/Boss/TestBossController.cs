@@ -101,7 +101,7 @@ public class TestBossController : MonoBehaviour
         {
             knockBackSphare.transform.localScale = Vector3.Lerp(knockBackSphare.transform.localScale, new Vector3(knockbackMaxSacle, knockbackMaxSacle, knockbackMaxSacle), Time.deltaTime * 8f); ;
             //Debug.Log(knockBackSphare.transform.localScale.y);
-            yield return new WaitForSeconds(.1f) ;
+            yield return new WaitForSeconds(.15f) ;
         }
         animator.SetBool("Attack", true);
         //Debug.Log("Set bool true");
@@ -127,6 +127,7 @@ public class TestBossController : MonoBehaviour
     IEnumerator WaterNormalAttack()
     {
         attackAble = false;
+        int count = 0;
         //find attack point
         for (int i = 0; i < attackCount; i++)
         {
@@ -145,9 +146,14 @@ public class TestBossController : MonoBehaviour
                 bossAttack.transform.localScale *= attackPrefabRadius;
                 
                 attackPoint.y = hit.point.y;
-                bossAttack.transform.SetParent(this.transform);
+                bossAttack.transform.SetParent(transform);
             }
-            yield return new WaitForSeconds(0.001f) ;
+            count++;
+            if (count >= Random.Range(3, 5))
+            {
+                count = 0;
+                yield return new WaitForSeconds(0.02f);
+            }
         }
         if (attackCD > 0)
         {

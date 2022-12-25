@@ -37,7 +37,7 @@ public class PlayerStates : MonoBehaviour
     public HealthBar healthBar;
     public bool regening;
 
-    private float takeDamageTimer = 0;
+    private float takeDamageTimer;
     private bool regenComplete;
 
     [HideInInspector]
@@ -47,6 +47,7 @@ public class PlayerStates : MonoBehaviour
 
     void Start()
     {
+        takeDamageTimer = 0
         //questFinished = new bool[QuestManager.instance.dialogueScriptableObjs.Length];
         playerData = PlayerManager.instance.playerData;
         talkingTo = QuestGoal.TalkToTarget.None;
@@ -77,7 +78,7 @@ public class PlayerStates : MonoBehaviour
         isAiming = false;
         died = false;
         regenComplete = true;
-        takeDamageTimer = 10;
+        takeDamageTimer = 6f;
 
         GetComponent<PlayerCombat>() .SelectSkill(skillSlot);
         healthBar = UIManager.instance.UI.transform.Find("HUD/HealthBar").gameObject.GetComponent<HealthBar>();
@@ -96,17 +97,17 @@ public class PlayerStates : MonoBehaviour
         {
             currentHealth -= currentHealth % 1;
         }
-        if (regenAble && takeDamageTimer < 11)
+        if (regenAble && takeDamageTimer < 6f)
         {
             regening = false;
             takeDamageTimer += Time.deltaTime;
         }
-        if(takeDamageTimer >= 10f)
+        if(takeDamageTimer >= 6f)
         {
             regening = true;
         }
 
-        if (regenAble && takeDamageTimer >= 10f && regenComplete && currentHealth < maxHealth) 
+        if (regenAble && takeDamageTimer >= 6f && regenComplete && currentHealth < maxHealth) 
         {
             regenComplete = false;
             StartCoroutine(RegenDelay());

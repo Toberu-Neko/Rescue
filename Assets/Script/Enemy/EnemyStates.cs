@@ -48,7 +48,7 @@ public class EnemyStates : MonoBehaviour
             }
 
             combatTimer += Time.deltaTime;
-            Debug.Log(combatTimer);
+            //Debug.Log(combatTimer);
         }
         
         if (combatTimer > 3f)

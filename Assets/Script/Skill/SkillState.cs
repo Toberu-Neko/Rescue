@@ -46,7 +46,6 @@ public class SkillState : MonoBehaviour
                     aud.Play();
 
                     wallStatus.TakeDamage(skill.damage); 
-
                 }
                 else if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Enemies"))
                 {
@@ -69,7 +68,9 @@ public class SkillState : MonoBehaviour
                 else if (collision.gameObject.layer == LayerMask.NameToLayer("Skill") || 
                     collision.collider.gameObject.layer == LayerMask.NameToLayer("Player") || 
                     collision.collider.gameObject.layer == LayerMask.NameToLayer("EnemyAttack"))
+                {
                     return;
+                }
 
                 hitTarget = true;
                 rig.isKinematic = true;

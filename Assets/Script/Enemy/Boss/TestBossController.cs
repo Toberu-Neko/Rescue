@@ -101,7 +101,7 @@ public class TestBossController : MonoBehaviour
         {
             knockBackSphare.transform.localScale = Vector3.Lerp(knockBackSphare.transform.localScale, new Vector3(knockbackMaxSacle, knockbackMaxSacle, knockbackMaxSacle), Time.deltaTime * 8f); ;
             //Debug.Log(knockBackSphare.transform.localScale.y);
-            yield return new WaitForSeconds(.07f) ;
+            yield return new WaitForSeconds(.1f) ;
         }
         animator.SetBool("Attack", true);
         //Debug.Log("Set bool true");

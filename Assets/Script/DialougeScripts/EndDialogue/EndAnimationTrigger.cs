@@ -87,6 +87,9 @@ public class EndAnimationTrigger : MonoBehaviour
             pauseMenu.canPause = false;
             playerStates.gameEnded = true;
             endCanvas.SetActive(true);
+            AudioManager.instance.Play("BGM_FinalAni");
+            AudioManager.instance.Stop("BGM_L1");
+            AudioManager.instance.Stop("BGM_Rain");
             StopAllCoroutines();
             StartCoroutine(CanvasGroupAlpha(0));
         }
@@ -106,7 +109,7 @@ public class EndAnimationTrigger : MonoBehaviour
             diaCanvasGroup[i].alpha += 0.1f;
             yield return new WaitForSeconds(0.05f);
         }
-        Debug.Log(i);
+        //Debug.Log(i);
         yield return null;
         dialogueTextGameobj.SetActive(true);
         dialogueCount++;

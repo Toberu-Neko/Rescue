@@ -148,6 +148,27 @@ MonoBehaviour:
   giveQuestDia: {fileID: 0}
   completeQuestDia: {fileID: 0}
   interactionKey: 101
+  pressEString:
+    m_TableReference:
+      m_TableCollectionName: GUID:82c4bcca5f00cce4e893a61c70e973ae
+    m_TableEntryReference:
+      m_KeyId: 26634871787520
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  clearEnemyString:
+    m_TableReference:
+      m_TableCollectionName: GUID:82c4bcca5f00cce4e893a61c70e973ae
+    m_TableEntryReference:
+      m_KeyId: 26634871787520
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &5026566019483266711
 MonoBehaviour:
   m_ObjectHideFlags: 0

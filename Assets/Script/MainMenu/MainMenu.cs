@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 public class MainMenu : MonoBehaviour
 {
@@ -13,6 +14,23 @@ public class MainMenu : MonoBehaviour
     private MainMenuDialogueManager mainMenuDialogueManager;
     int dialogueCount;
     bool blackImagAlphaChanging;
+
+    private void Awake()
+    {
+        if(Application.systemLanguage == SystemLanguage.Chinese)
+        {
+            ChangeLanguage(0);
+        }
+        else if (Application.systemLanguage == SystemLanguage.Japanese)
+        {
+            ChangeLanguage(2);
+        }
+        else
+        {
+            ChangeLanguage(1);
+        }
+    }
+
     private void Start()
     {
         dialogueCount = 0;
@@ -96,5 +114,23 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private bool active = false;
+
+    public void ChangeLanguageButton(int index)
+    {
+        if (active)
+            return;
+
+        StartCoroutine(ChangeLanguage(index));
+    }
+
+    private IEnumerator ChangeLanguage(int index)
+    {
+        active = true;
+        yield return LocalizationSettings.InitializationOperation;
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
+        active = false;
     }
 }

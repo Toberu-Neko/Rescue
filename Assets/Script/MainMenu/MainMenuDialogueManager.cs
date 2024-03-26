@@ -63,7 +63,7 @@ public class MainMenuDialogueManager : MonoBehaviour
 
         foreach (Line line in dialogue.lines)
         {
-            sentences.Enqueue(line.sentences);
+            sentences.Enqueue(line.localizedSentences.GetLocalizedString());
         }
 
 

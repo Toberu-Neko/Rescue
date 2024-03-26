@@ -8,11 +8,6 @@ public class EnemyInRange : MonoBehaviour
     [SerializeField] private Transform enemyDetector;
     [SerializeField] private float detectorRange;
     public bool enemyInRange;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Localization;
 
 [RequireComponent(typeof(EnemyInRange))]
 public class DialogueTrigger : MonoBehaviour
@@ -25,19 +26,18 @@ public class DialogueTrigger : MonoBehaviour
 
     private PlayerStates playerStates;
     private PlayerData playerData;
-    private QusetControler qusetControler;
-    private PlayerSaveScript playerSaveScript;
     public KeyCode interactionKey = KeyCode.E;
     bool playerInRange;
     int dialogueCounter;
     int repeatDialogueCounter;
+
+    [SerializeField] private LocalizedString pressEString;
+    [SerializeField] private LocalizedString clearEnemyString;
     
     private void Start()
     {
         dialogueCounter = 0;
         repeatDialogueCounter = 0;
-        playerSaveScript = UIManager.instance.UI.GetComponent<PlayerSaveScript>();
-        qusetControler = UIManager.instance.qusetControler;
         dialogueManager = UIManager.instance.dialogueManager;
         notePressE = PlayerManager.instance.player.transform.Find("WorldSpaceCanvas/PressEToTalkNote").gameObject;
         notePressEText = notePressE.transform.Find("PressEToTalk").gameObject.GetComponent<TextMeshProUGUI>();
@@ -54,17 +54,20 @@ public class DialogueTrigger : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(interactionKey) && playerInRange && Cursor.lockState == CursorLockMode.Locked && !enemyInRange.enemyInRange)
+        if (!playerInRange)
+            return;
+
+        if(Input.GetKeyDown(interactionKey) && Cursor.lockState == CursorLockMode.Locked && !enemyInRange.enemyInRange)
         {
             TriggerDialouge();
         }
-        if (enemyInRange.enemyInRange && playerInRange && notePressEText.text != "清除小怪")
+        if (enemyInRange.enemyInRange && notePressEText.text != clearEnemyString.GetLocalizedString())
         {
-            notePressEText.text = "清除小怪";
+            notePressEText.text = clearEnemyString.GetLocalizedString();
         }
-        if (!enemyInRange.enemyInRange && playerInRange && notePressEText.text != "「E」互動")
+        if (!enemyInRange.enemyInRange && notePressEText.text != pressEString.GetLocalizedString())
         {
-            notePressEText.text = "「E」互動";
+            notePressEText.text = pressEString.GetLocalizedString();
         }
     }
     #region 進入範圍E互動
@@ -136,7 +139,7 @@ public class DialogueTrigger : MonoBehaviour
 
             if (normalDialogue[dialogueCounter].haveGoal)
             {
-                dialogueManager.ChangeGoal(normalDialogue[dialogueCounter].nowGoal);
+                dialogueManager.ChangeGoal(normalDialogue[dialogueCounter].localizedNowGoal.GetLocalizedString());
             }
             if (normalDialogue[dialogueCounter].giveRegen)
             {

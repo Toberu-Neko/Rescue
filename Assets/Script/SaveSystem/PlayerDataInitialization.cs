@@ -16,7 +16,7 @@ public class PlayerDataInitialization : MonoBehaviour
         playerData.maxHealth = 150;
         playerData.currentHealth = playerData.maxHealth / 2;
         playerData.position = L1Position;
-        playerData.nowGoal = "現在還沒有目標。";
+        playerData.nowGoal = " ";
 
         //playerData.questFinished = new bool[QuestManager.instance.dialogueScriptableObjs.Length];
         /*for (int i = 0; i < playerData.questFinished.Length; i++)

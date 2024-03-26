@@ -33777,7 +33777,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 35ab7392e20992c42848545ecb702d95, type: 2}
   giveQuestDia: {fileID: 0}
   completeQuestDia: {fileID: 0}
+  pressEString:
+    m_TableReference:
+      m_TableCollectionName: GUID:82c4bcca5f00cce4e893a61c70e973ae
+    m_TableEntryReference:
+      m_KeyId: 26634871787520
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  clearEnemyString:
+    m_TableReference:
+      m_TableCollectionName: GUID:82c4bcca5f00cce4e893a61c70e973ae
+    m_TableEntryReference:
+      m_KeyId: 28640910921728
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   interactionKey: 101
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &5680369902186305867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33817,7 +33838,37 @@ MonoBehaviour:
   dialogueObj: {fileID: 0}
   endCanvas: {fileID: 0}
   saveAndLoadUI: {fileID: 0}
+  pressEString:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  clearEnemyString:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  endString:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   interactionKey: 101
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &5680369902186305865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33832,6 +33883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 0}
   confirmSkipUI: {fileID: 0}
+  playerData: {fileID: 0}
   dialogueEnded: 0
 --- !u!1 &7765555086855835849
 GameObject:

@@ -1500,7 +1500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 1
   attackDamage: 20
-  attackCooldown: 0.5
+  attackCooldown: 0.4
   attackDetector: {fileID: 6157927873191186147}
   enemyLayers:
     serializedVersion: 2

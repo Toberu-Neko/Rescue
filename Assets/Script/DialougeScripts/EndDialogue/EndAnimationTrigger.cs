@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(EnemyInRange))]
@@ -22,6 +23,9 @@ public class EndAnimationTrigger : MonoBehaviour
     [SerializeField] private GameObject saveAndLoadUI;
     private PauseMenu pauseMenu;
     //player
+    [SerializeField] private LocalizedString pressEString;
+    [SerializeField] private LocalizedString clearEnemyString;
+    [SerializeField] private LocalizedString endString;
     private PlayerStates playerStates;
     PlayerData playerData;
     private GameObject notePressE;
@@ -77,7 +81,7 @@ public class EndAnimationTrigger : MonoBehaviour
             {
                 //dialogueObj.SetActive(false);
                 //Debug.Log("Ended");
-                playerStates.nowGoal = "恭喜破關！現在你可以隨意存檔了。";
+                playerStates.nowGoal = endString.GetLocalizedString();
                 saveAndLoadUI.SetActive(true);
                 Time.timeScale = 0f;
             }
@@ -93,13 +97,13 @@ public class EndAnimationTrigger : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(CanvasGroupAlpha(0));
         }
-        if (enemyInRange.enemyInRange && playerInRange && notePressEText.text != "清除敵人")
+        if (enemyInRange.enemyInRange && playerInRange && notePressEText.text != clearEnemyString.GetLocalizedString())
         {
-            notePressEText.text = "清除敵人";
+            notePressEText.text = clearEnemyString.GetLocalizedString();
         }
-        if (!enemyInRange.enemyInRange && playerInRange && notePressEText.text != "「E」互動")
+        if (!enemyInRange.enemyInRange && playerInRange && notePressEText.text != pressEString.GetLocalizedString())
         {
-            notePressEText.text = "「E」互動";
+            notePressEText.text = pressEString.GetLocalizedString();
         }
     }
     IEnumerator CanvasGroupAlpha(int i)

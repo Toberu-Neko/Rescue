@@ -22,7 +22,7 @@ public class TriggerEnterDialogue : MonoBehaviour
         {
             if (dialogue.haveGoal)
             {
-                dialogueManager.ChangeGoal(dialogue.nowGoal);
+                dialogueManager.ChangeGoal(dialogue.localizedNowGoal.GetLocalizedString());
             }
             dialogueManager.StartDialogue(dialogue);
             playerInRange = true;

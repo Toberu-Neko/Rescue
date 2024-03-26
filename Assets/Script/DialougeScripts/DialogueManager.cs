@@ -98,8 +98,8 @@ public class DialogueManager : MonoBehaviour
 
         foreach(Line line in dialogue.lines)
         {
-            npcNameArray.Enqueue(line.ncpName);
-            sentences.Enqueue(line.sentences);
+            npcNameArray.Enqueue(line.localizedncpName.GetLocalizedString());
+            sentences.Enqueue(line.localizedSentences.GetLocalizedString());
         }
         DisplayNextSentence();
     }

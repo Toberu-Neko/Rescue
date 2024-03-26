@@ -196,15 +196,4 @@ public class DialogueTrigger : MonoBehaviour
             playerCombat.SelectSkill(1);
         }*/
     }
-
-
-    void GiveSkill()
-    {
-        if (playerStates.quest.giveSwim)
-            playerStates.swimAble = true;
-        if (playerStates.quest.giveRegen)
-            playerStates.regenAble = true;
-        if(playerStates.quest.giveThrowStone)
-            playerStates.throwStoneAble = true;
-    }
 }

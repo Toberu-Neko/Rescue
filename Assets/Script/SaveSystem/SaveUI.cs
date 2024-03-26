@@ -1,14 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Localization;
 
 public class SaveUI : MonoBehaviour
 {
     public GameObject[] save_Load_Button;
     private TextMeshProUGUI[] playTimeText, skillText, goalText;
+
+    [SerializeField] private LocalizedString swimLocalizedString;
+    [SerializeField] private LocalizedString regenLocalizedString;
+    [SerializeField] private LocalizedString throwStoneLocalizedString;
+    [SerializeField] private LocalizedString throwFireLocalizedString;
+    [SerializeField] private LocalizedString periodLocalizedString;
+    [SerializeField] private LocalizedString coma;
+    [SerializeField] private LocalizedString noskillLocalizedString;
+
+    [SerializeField] private LocalizedString playtimeLocalizedString;
+    [SerializeField] private LocalizedString currentSkillLocalizedString;
+    [SerializeField] private LocalizedString goalLocalizedString;
+
     void Awake()
     {
         playTimeText = new TextMeshProUGUI[save_Load_Button.Length];
@@ -47,32 +57,37 @@ public class SaveUI : MonoBehaviour
             #region 技能狀態判定
             if (data.regen)
             {
-                skillText += "治癒、";
+                skillText += regenLocalizedString.GetLocalizedString() + coma.GetLocalizedString();
                 haveSkill = true;
             }
             if (data.swim)
             {
-                skillText += "游泳、";
+                skillText += swimLocalizedString.GetLocalizedString() + coma.GetLocalizedString();
                 haveSkill = true;
             }
             if(data.throwStone)
             {
-                skillText += "投石、";
+                skillText += throwStoneLocalizedString.GetLocalizedString() + coma.GetLocalizedString();
                 haveSkill = true;
             }
             if (data.throwFire)
             {
-                skillText += "噴火、";
+                skillText += throwFireLocalizedString.GetLocalizedString() + coma.GetLocalizedString();
+                haveSkill = true;
+            }
+            if (data.throwDebug)
+            {
+                skillText += " ??? " + coma.GetLocalizedString();
                 haveSkill = true;
             }
             if (haveSkill)
             {
                 skillText = skillText.Remove(skillText.Length - 1);
-                skillText += "。";
+                skillText += periodLocalizedString.GetLocalizedString();
             }
             if(!haveSkill)
             {
-                skillText = "無技能。";
+                skillText = noskillLocalizedString.GetLocalizedString() + periodLocalizedString.GetLocalizedString();
             }
             #endregion
 
@@ -120,15 +135,15 @@ public class SaveUI : MonoBehaviour
             }
             #endregion
 
-            playTimeText[saveSlot].text = "遊玩時間：" + day + hourColon + hour + minColon + minute + secondColon + second;
-            skillText[saveSlot].text = "持有能力：" + skill;
-            goalText[saveSlot].text = "目標：" + goal;
+            playTimeText[saveSlot].text = playtimeLocalizedString.GetLocalizedString() + day + hourColon + hour + minColon + minute + secondColon + second;
+            skillText[saveSlot].text = currentSkillLocalizedString.GetLocalizedString() + skill;
+            goalText[saveSlot].text = goalLocalizedString.GetLocalizedString() + goal;
         }
         if (!haveSave)
         {
             playTimeText[saveSlot].text = "";
             skillText[saveSlot].text = "";
-            goalText[saveSlot].text = "無存檔";
+            goalText[saveSlot].text = "Empty";
         }
     }
 

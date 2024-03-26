@@ -23,6 +23,4 @@ public class PlayerData : MonoBehaviour
     public bool throwStone;
     public bool throwFire;
     public bool throwDebug;
-
-
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Localization;
 
 public class SkillUI : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class SkillUI : MonoBehaviour
     private GameObject[] mainSkill;
     private TextMeshProUGUI[] mainSkillText;
     [SerializeField] private Image[] mainSkillImage;
+    [SerializeField] private LocalizedString swimLocalizedString;
+    [SerializeField] private LocalizedString regenLocalizedString;
 
 
     private Button[] subSkillButton;
@@ -84,7 +87,7 @@ public class SkillUI : MonoBehaviour
             mainSkill[mainSkillCount].SetActive(true);
             mainSkillImage[mainSkillCount].sprite = regenIcon;
             mainSkillImage[mainSkillCount].color= Color.white;
-            mainSkillText[mainSkillCount].text = "ªvÂ¡";
+            mainSkillText[mainSkillCount].text = regenLocalizedString.GetLocalizedString();
             mainSkillCount++;
         }
         if (playerStates.swimAble)
@@ -92,7 +95,7 @@ public class SkillUI : MonoBehaviour
             mainSkill[mainSkillCount].SetActive(true);
             mainSkillImage[mainSkillCount].sprite = swimIcon;
             mainSkillImage[mainSkillCount].color = Color.white;
-            mainSkillText[mainSkillCount].text = "´åªa";
+            mainSkillText[mainSkillCount].text = swimLocalizedString.GetLocalizedString();
             mainSkillCount++;
         }
 

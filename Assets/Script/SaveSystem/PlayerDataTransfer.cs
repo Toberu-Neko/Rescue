@@ -43,13 +43,6 @@ public class PlayerDataTransfer
         throwFire = playerStates.throwFireAble;
         throwDebug = playerStates.throwDebugAble;
 
-        //questFinished = new bool[playerStates.questFinished.Length];
-
-        //Debug.Log(playerStates.questFinished.Length);
-        //for(int i = 0; i< playerStates.questFinished.Length; i++)
-        //{
-        //    questFinished[i] = playerStates.questFinished[i];
-        //}
 
         position = new float[3];
         position[0] = playerStates.transform.position.x;

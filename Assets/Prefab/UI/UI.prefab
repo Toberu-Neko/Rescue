@@ -17543,7 +17543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2693170902791503098}
-  - component: {fileID: 4278274280745603063}
+  - component: {fileID: 8694852964740786581}
   m_Layer: 0
   m_Name: 'LoadUI '
   m_TagString: Untagged
@@ -17577,7 +17577,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4278274280745603063
+--- !u!114 &8694852964740786581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17595,90 +17595,90 @@ MonoBehaviour:
   - {fileID: 5203608709883335995}
   swimLocalizedString:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:82c4bcca5f00cce4e893a61c70e973ae
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 6781184135168
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   regenLocalizedString:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:82c4bcca5f00cce4e893a61c70e973ae
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 6762297184256
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   throwStoneLocalizedString:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:82c4bcca5f00cce4e893a61c70e973ae
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 8621816696832
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   throwFireLocalizedString:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:82c4bcca5f00cce4e893a61c70e973ae
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 8620340301824
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   periodLocalizedString:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:de69f33dff8c5b94991666d1229db503
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 6837915648
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   coma:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:de69f33dff8c5b94991666d1229db503
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 447667654656
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   noskillLocalizedString:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:82c4bcca5f00cce4e893a61c70e973ae
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 8598265679872
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   playtimeLocalizedString:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:de69f33dff8c5b94991666d1229db503
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1694210609152
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   currentSkillLocalizedString:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:de69f33dff8c5b94991666d1229db503
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1688577658880
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   goalLocalizedString:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:de69f33dff8c5b94991666d1229db503
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1681317318656
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
